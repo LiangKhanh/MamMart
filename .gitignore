@@ -1,0 +1,5 @@
+# Bỏ qua các file rác và thư mục upload/plugin nặng
+wp-content/uploads/
+wp-content/cache/
+*.log
+.htaccess
