@@ -1,0 +1,197 @@
+{
+    "label": "SIMULATION ONLY",
+    "executed_at_utc": "2026-11-12T17:27:24+00:00",
+    "php_version": "8.0.30",
+    "php_binary": "D:\\XamPP\\php\\php.exe",
+    "counts": {
+        "PASS": 29,
+        "FAIL": 0,
+        "BLOCKED": 1
+    },
+    "results": [
+        {
+            "id": "T01",
+            "name": "Consent defaults false; profile flags do not opt in",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T02",
+            "name": "Before six-month milestone",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T03",
+            "name": "Issue on milestone and expire at next month boundary",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T04",
+            "name": "Late signup waits until next calendar day under explicit trial policy",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T05",
+            "name": "Last-day signup receives no next-month catch-up",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T06",
+            "name": "Repeated issuance is idempotent",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T07",
+            "name": "Two PHP processes contend for the same issuance",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T08",
+            "name": "Two babies, one parent, separate benefits",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T09",
+            "name": "Missing, impossible, future and unapproved DOB",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T10",
+            "name": "Approved DOB replaces old schedule before issuance",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T11",
+            "name": "DOB changed after issuance does not create or rewrite benefit",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T12",
+            "name": "Duplicate, stale and wrong-owner DOB events",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T13",
+            "name": "Unresolved 29\/30\/31-day boundaries including leap-year February",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T14",
+            "name": "Withdraw before issuance stops issuance and sending",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T15",
+            "name": "Withdraw after issuance retains old usable coupon",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T16",
+            "name": "Failed email retries the same persisted code",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T17",
+            "name": "Consent checked again immediately before retry",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T18",
+            "name": "Anonymous or another customer cannot redeem",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T19",
+            "name": "Expiry inclusive end of month and exclusive next-month midnight",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T20",
+            "name": "Eligible-only basket discounts fifteen percent",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T21",
+            "name": "Mixed basket excludes food and other items; shipping unchanged",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T22",
+            "name": "Food-only and unrelated-only baskets cannot get discount",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T23",
+            "name": "Variation eligibility must be explicit; no parent inheritance",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T24",
+            "name": "One coupon per cart and per order, both application orders",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T25",
+            "name": "Successful fake use prevents subsequent use",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T26",
+            "name": "Duplicate success event cannot consume twice",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T27",
+            "name": "Pending, paid, cancelled, partial and full refunds have no automatic usage mapping",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T28",
+            "name": "Unconfirmed pricing blocks; explicitly labelled minimum, cap and rounding trials",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T29",
+            "name": "Restart after durable issue-before-send; transaction rollback and invalid inputs",
+            "status": "PASS",
+            "detail": "Assertions executed successfully."
+        },
+        {
+            "id": "T30",
+            "name": "Live WordPress role and nonce protection",
+            "status": "BLOCKED",
+            "detail": "CLI runner does not execute live WordPress sessions. Manual T30 evidence is tracked separately; do not mark live nonce\/role checks PASS from CLI or stub tests."
+        }
+    ],
+    "limitations": [
+        "No live WooCommerce, email or payment integration.",
+        "PASS of PENDING_POLICY asserts safe deferral, not a resolved business policy."
+    ]
+}

@@ -1,0 +1,2081 @@
+{
+    "label": "SIMULATION ONLY",
+    "logs": [
+        {
+            "context": 0,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "baby_id": "B-DEMO-01",
+                "status": "NO_CONSENT",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 0,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "consent",
+            "result": {
+                "status": "CONSENT_SAVED",
+                "customer_id": "C-DEMO-01",
+                "marketing_opt_in": true,
+                "version": 1,
+                "changed_at": "2026-11-06 09:00:00",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 0,
+            "sequence": 3,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "consent",
+            "result": {
+                "status": "CONSENT_SAVED",
+                "customer_id": "C-DEMO-01",
+                "marketing_opt_in": false,
+                "version": 2,
+                "changed_at": "2026-11-06 09:00:00",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 1,
+            "sequence": 1,
+            "at": "2026-11-05 23:59:59",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "baby_id": "B-DEMO-01",
+                "status": "NOT_DUE",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 2,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 3,
+            "sequence": 1,
+            "at": "2026-11-20 19:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "baby_id": "B-DEMO-01",
+                "status": "PENDING_POLICY",
+                "reason": "LATE_REGISTRATION_CLOCK_AND_ANCHOR",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 3,
+            "sequence": 2,
+            "at": "2026-11-20 23:59:59",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "baby_id": "B-DEMO-01",
+                "status": "WAIT_NEXT_DAY",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 3,
+            "sequence": 3,
+            "at": "2026-11-21 00:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-21 00:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 4,
+            "sequence": 1,
+            "at": "2026-11-30 10:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "baby_id": "B-DEMO-01",
+                "status": "OUTSIDE_CAMPAIGN_MONTH",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 4,
+            "sequence": 2,
+            "at": "2026-12-01 00:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "baby_id": "B-DEMO-01",
+                "status": "OUTSIDE_CAMPAIGN_MONTH",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 5,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 5,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ALREADY_ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 5,
+            "sequence": 3,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ALREADY_ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 5,
+            "sequence": 4,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ALREADY_ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 5,
+            "sequence": 5,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ALREADY_ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 5,
+            "sequence": 6,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ALREADY_ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 6,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 6,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-11C94346413D42BB",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-03",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-11C94346413D42BB",
+                    "code": "DEMO-11C94346413D42BB",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 7,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "baby_id": "B-DEMO-01",
+                "status": "INVALID_DOB",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 8,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "baby_id": "B-DEMO-01",
+                "status": "INVALID_DOB",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 9,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "baby_id": "B-DEMO-01",
+                "status": "INVALID_DOB",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 10,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "baby_id": "B-DEMO-01",
+                "status": "INVALID_DOB",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 11,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "dob",
+            "result": {
+                "status": "DOB_APPROVED",
+                "baby_id": "B-DEMO-01",
+                "existing_issue_policy": null,
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 11,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "baby_id": "B-DEMO-01",
+                "status": "NOT_DUE",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 11,
+            "sequence": 3,
+            "at": "2026-11-20 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 2,
+                    "issued_at": "2026-11-20 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 12,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 12,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "dob",
+            "result": {
+                "status": "DOB_APPROVED",
+                "baby_id": "B-DEMO-01",
+                "existing_issue_policy": "PENDING_POLICY",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 12,
+            "sequence": 3,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ALREADY_ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 13,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "dob",
+            "result": {
+                "status": "DOB_APPROVED",
+                "baby_id": "B-DEMO-01",
+                "existing_issue_policy": null,
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 13,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "dob",
+            "result": {
+                "status": "DUPLICATE_EVENT",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 13,
+            "sequence": 3,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "dob",
+            "result": {
+                "status": "STALE_VERSION",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 13,
+            "sequence": 4,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "dob",
+            "result": {
+                "status": "INVALID_EVENT",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 14,
+            "sequence": 1,
+            "at": "2026-11-30 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "baby_id": "B-DEMO-01",
+                "status": "PENDING_POLICY",
+                "reason": "DOB_DAY_29_31",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 15,
+            "sequence": 1,
+            "at": "2027-02-28 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "baby_id": "B-DEMO-01",
+                "status": "PENDING_POLICY",
+                "reason": "DOB_DAY_29_31",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 16,
+            "sequence": 1,
+            "at": "2027-02-28 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "baby_id": "B-DEMO-01",
+                "status": "PENDING_POLICY",
+                "reason": "DOB_DAY_29_31",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 17,
+            "sequence": 1,
+            "at": "2028-02-29 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "baby_id": "B-DEMO-01",
+                "status": "PENDING_POLICY",
+                "reason": "DOB_DAY_29_31",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 18,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "consent",
+            "result": {
+                "status": "CONSENT_SAVED",
+                "customer_id": "C-DEMO-01",
+                "marketing_opt_in": false,
+                "version": 2,
+                "changed_at": "2026-11-06 09:00:00",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 18,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "baby_id": "B-DEMO-01",
+                "status": "NO_CONSENT",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 19,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 19,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "consent",
+            "result": {
+                "status": "CONSENT_SAVED",
+                "customer_id": "C-DEMO-01",
+                "marketing_opt_in": false,
+                "version": 2,
+                "changed_at": "2026-11-06 09:00:00",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 19,
+            "sequence": 3,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "VALID",
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "subtotal_vnd": 520000,
+                "eligible_subtotal_vnd": 400000,
+                "discount_vnd": 60000,
+                "shipping_vnd": 20000,
+                "total_vnd": 480000,
+                "lines": [
+                    {
+                        "sku": "SKU-DEMO-BOWL",
+                        "subtotal_vnd": 400000,
+                        "eligible": true
+                    },
+                    {
+                        "sku": "SKU-DEMO-FOOD",
+                        "subtotal_vnd": 120000,
+                        "eligible": false
+                    }
+                ],
+                "pricing_policy": "SIMULATION_BYPASS_MIN_CAP",
+                "tax_policy": "SIMULATION_NO_TAX",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 19,
+            "sequence": 4,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "mail",
+            "result": {
+                "status": "NO_CONSENT",
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 20,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 20,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "mail",
+            "result": {
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                "status": "FAILED",
+                "error_code": "SIMULATED_MAIL_ERROR",
+                "transport": "fake",
+                "coupon_code": "DEMO-15A23762CFDC1891",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 20,
+            "sequence": 3,
+            "at": "2026-11-06 10:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "mail",
+            "result": {
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                "status": "SIMULATED_SENT",
+                "error_code": null,
+                "transport": "fake",
+                "coupon_code": "DEMO-15A23762CFDC1891",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 21,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 21,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "mail",
+            "result": {
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                "status": "FAILED",
+                "error_code": "SIMULATED_MAIL_ERROR",
+                "transport": "fake",
+                "coupon_code": "DEMO-15A23762CFDC1891",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 21,
+            "sequence": 3,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "consent",
+            "result": {
+                "status": "CONSENT_SAVED",
+                "customer_id": "C-DEMO-01",
+                "marketing_opt_in": false,
+                "version": 2,
+                "changed_at": "2026-11-06 09:00:00",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 21,
+            "sequence": 4,
+            "at": "2026-11-06 10:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "mail",
+            "result": {
+                "status": "NO_CONSENT",
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 22,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 22,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "WRONG_OWNER",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 22,
+            "sequence": 3,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "WRONG_OWNER",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 23,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 23,
+            "sequence": 2,
+            "at": "2026-11-30 23:59:59",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "VALID",
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "subtotal_vnd": 520000,
+                "eligible_subtotal_vnd": 400000,
+                "discount_vnd": 60000,
+                "shipping_vnd": 20000,
+                "total_vnd": 480000,
+                "lines": [
+                    {
+                        "sku": "SKU-DEMO-BOWL",
+                        "subtotal_vnd": 400000,
+                        "eligible": true
+                    },
+                    {
+                        "sku": "SKU-DEMO-FOOD",
+                        "subtotal_vnd": 120000,
+                        "eligible": false
+                    }
+                ],
+                "pricing_policy": "SIMULATION_BYPASS_MIN_CAP",
+                "tax_policy": "SIMULATION_NO_TAX",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 23,
+            "sequence": 3,
+            "at": "2026-12-01 00:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "EXPIRED",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 23,
+            "sequence": 4,
+            "at": "2026-12-01 00:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "mail",
+            "result": {
+                "status": "EXPIRED",
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 24,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 24,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "VALID",
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "subtotal_vnd": 400000,
+                "eligible_subtotal_vnd": 400000,
+                "discount_vnd": 60000,
+                "shipping_vnd": 20000,
+                "total_vnd": 360000,
+                "lines": [
+                    {
+                        "sku": "SKU-DEMO-BOWL",
+                        "subtotal_vnd": 400000,
+                        "eligible": true
+                    }
+                ],
+                "pricing_policy": "SIMULATION_BYPASS_MIN_CAP",
+                "tax_policy": "SIMULATION_NO_TAX",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 25,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 25,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "VALID",
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "subtotal_vnd": 520000,
+                "eligible_subtotal_vnd": 400000,
+                "discount_vnd": 60000,
+                "shipping_vnd": 20000,
+                "total_vnd": 480000,
+                "lines": [
+                    {
+                        "sku": "SKU-DEMO-BOWL",
+                        "subtotal_vnd": 400000,
+                        "eligible": true
+                    },
+                    {
+                        "sku": "SKU-DEMO-FOOD",
+                        "subtotal_vnd": 120000,
+                        "eligible": false
+                    }
+                ],
+                "pricing_policy": "SIMULATION_BYPASS_MIN_CAP",
+                "tax_policy": "SIMULATION_NO_TAX",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 25,
+            "sequence": 3,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "VALID",
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "subtotal_vnd": 600000,
+                "eligible_subtotal_vnd": 400000,
+                "discount_vnd": 60000,
+                "shipping_vnd": 30000,
+                "total_vnd": 570000,
+                "lines": [
+                    {
+                        "sku": "SKU-DEMO-BOWL",
+                        "subtotal_vnd": 400000,
+                        "eligible": true
+                    },
+                    {
+                        "sku": "SKU-DEMO-FOOD",
+                        "subtotal_vnd": 120000,
+                        "eligible": false
+                    },
+                    {
+                        "sku": "SKU-DEMO-OTHER",
+                        "subtotal_vnd": 80000,
+                        "eligible": false
+                    }
+                ],
+                "pricing_policy": "SIMULATION_BYPASS_MIN_CAP",
+                "tax_policy": "SIMULATION_NO_TAX",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 26,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 26,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "NO_ELIGIBLE_ITEMS",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 26,
+            "sequence": 3,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "NO_ELIGIBLE_ITEMS",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 27,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 27,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "NO_ELIGIBLE_ITEMS",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 28,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 28,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "PENDING_POLICY",
+                "reason": "SKU_OR_VARIATION_ELIGIBILITY_UNCONFIRMED",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 29,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 29,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-11C94346413D42BB",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-03",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-11C94346413D42BB",
+                    "code": "DEMO-11C94346413D42BB",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 29,
+            "sequence": 3,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "ONE_COUPON_PER_ORDER",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 29,
+            "sequence": 4,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "ONE_COUPON_PER_ORDER",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 29,
+            "sequence": 5,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "ONE_COUPON_PER_ORDER",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 29,
+            "sequence": 6,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "use",
+            "result": {
+                "status": "SIMULATED_USED",
+                "order_id": "O-DEMO-USE-01",
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "subtotal_vnd": 520000,
+                "eligible_subtotal_vnd": 400000,
+                "discount_vnd": 60000,
+                "shipping_vnd": 20000,
+                "total_vnd": 480000,
+                "lines": [
+                    {
+                        "sku": "SKU-DEMO-BOWL",
+                        "subtotal_vnd": 400000,
+                        "eligible": true
+                    },
+                    {
+                        "sku": "SKU-DEMO-FOOD",
+                        "subtotal_vnd": 120000,
+                        "eligible": false
+                    }
+                ],
+                "pricing_policy": "SIMULATION_BYPASS_MIN_CAP",
+                "tax_policy": "SIMULATION_NO_TAX",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 29,
+            "sequence": 7,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "use",
+            "result": {
+                "status": "ONE_COUPON_PER_ORDER",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 30,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 30,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "use",
+            "result": {
+                "status": "SIMULATED_USED",
+                "order_id": "O-DEMO-USE-01",
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "subtotal_vnd": 520000,
+                "eligible_subtotal_vnd": 400000,
+                "discount_vnd": 60000,
+                "shipping_vnd": 20000,
+                "total_vnd": 480000,
+                "lines": [
+                    {
+                        "sku": "SKU-DEMO-BOWL",
+                        "subtotal_vnd": 400000,
+                        "eligible": true
+                    },
+                    {
+                        "sku": "SKU-DEMO-FOOD",
+                        "subtotal_vnd": 120000,
+                        "eligible": false
+                    }
+                ],
+                "pricing_policy": "SIMULATION_BYPASS_MIN_CAP",
+                "tax_policy": "SIMULATION_NO_TAX",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 30,
+            "sequence": 3,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "ALREADY_USED",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 30,
+            "sequence": 4,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "use",
+            "result": {
+                "status": "ALREADY_USED",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 31,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 31,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "use",
+            "result": {
+                "status": "SIMULATED_USED",
+                "order_id": "O-DEMO-USE-01",
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "subtotal_vnd": 520000,
+                "eligible_subtotal_vnd": 400000,
+                "discount_vnd": 60000,
+                "shipping_vnd": 20000,
+                "total_vnd": 480000,
+                "lines": [
+                    {
+                        "sku": "SKU-DEMO-BOWL",
+                        "subtotal_vnd": 400000,
+                        "eligible": true
+                    },
+                    {
+                        "sku": "SKU-DEMO-FOOD",
+                        "subtotal_vnd": 120000,
+                        "eligible": false
+                    }
+                ],
+                "pricing_policy": "SIMULATION_BYPASS_MIN_CAP",
+                "tax_policy": "SIMULATION_NO_TAX",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 31,
+            "sequence": 3,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "use",
+            "result": {
+                "status": "DUPLICATE_EVENT",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 32,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 32,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "use",
+            "result": {
+                "status": "PENDING_POLICY",
+                "reason": "ORDER_USAGE_MAPPING_UNCONFIRMED",
+                "event": {
+                    "event_id": "EV-DEMO-Pending_Payment",
+                    "type": "Pending_Payment",
+                    "order_id": "O-DEMO-USE-01",
+                    "customer_id": "C-DEMO-01",
+                    "code": "DEMO-15A23762CFDC1891"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 32,
+            "sequence": 3,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "use",
+            "result": {
+                "status": "PENDING_POLICY",
+                "reason": "ORDER_USAGE_MAPPING_UNCONFIRMED",
+                "event": {
+                    "event_id": "EV-DEMO-Paid",
+                    "type": "Paid",
+                    "order_id": "O-DEMO-USE-01",
+                    "customer_id": "C-DEMO-01",
+                    "code": "DEMO-15A23762CFDC1891"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 32,
+            "sequence": 4,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "use",
+            "result": {
+                "status": "PENDING_POLICY",
+                "reason": "ORDER_USAGE_MAPPING_UNCONFIRMED",
+                "event": {
+                    "event_id": "EV-DEMO-Completed",
+                    "type": "Completed",
+                    "order_id": "O-DEMO-USE-01",
+                    "customer_id": "C-DEMO-01",
+                    "code": "DEMO-15A23762CFDC1891"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 32,
+            "sequence": 5,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "use",
+            "result": {
+                "status": "PENDING_POLICY",
+                "reason": "ORDER_USAGE_MAPPING_UNCONFIRMED",
+                "event": {
+                    "event_id": "EV-DEMO-Cancelled",
+                    "type": "Cancelled",
+                    "order_id": "O-DEMO-USE-01",
+                    "customer_id": "C-DEMO-01",
+                    "code": "DEMO-15A23762CFDC1891"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 32,
+            "sequence": 6,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "use",
+            "result": {
+                "status": "PENDING_POLICY",
+                "reason": "ORDER_USAGE_MAPPING_UNCONFIRMED",
+                "event": {
+                    "event_id": "EV-DEMO-PartiallyRefunded",
+                    "type": "PartiallyRefunded",
+                    "order_id": "O-DEMO-USE-01",
+                    "customer_id": "C-DEMO-01",
+                    "code": "DEMO-15A23762CFDC1891"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 32,
+            "sequence": 7,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "use",
+            "result": {
+                "status": "PENDING_POLICY",
+                "reason": "ORDER_USAGE_MAPPING_UNCONFIRMED",
+                "event": {
+                    "event_id": "EV-DEMO-Refunded",
+                    "type": "Refunded",
+                    "order_id": "O-DEMO-USE-01",
+                    "customer_id": "C-DEMO-01",
+                    "code": "DEMO-15A23762CFDC1891"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 32,
+            "sequence": 8,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "VALID",
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "subtotal_vnd": 520000,
+                "eligible_subtotal_vnd": 400000,
+                "discount_vnd": 60000,
+                "shipping_vnd": 20000,
+                "total_vnd": 480000,
+                "lines": [
+                    {
+                        "sku": "SKU-DEMO-BOWL",
+                        "subtotal_vnd": 400000,
+                        "eligible": true
+                    },
+                    {
+                        "sku": "SKU-DEMO-FOOD",
+                        "subtotal_vnd": 120000,
+                        "eligible": false
+                    }
+                ],
+                "pricing_policy": "SIMULATION_BYPASS_MIN_CAP",
+                "tax_policy": "SIMULATION_NO_TAX",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 33,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 33,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "PENDING_POLICY",
+                "reason": "MINIMUM_CAP_TAX_ROUNDING_UNCONFIRMED",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 33,
+            "sequence": 3,
+            "at": "2026-11-06 10:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "VALID",
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "subtotal_vnd": 520000,
+                "eligible_subtotal_vnd": 400000,
+                "discount_vnd": 50000,
+                "shipping_vnd": 20000,
+                "total_vnd": 490000,
+                "lines": [
+                    {
+                        "sku": "SKU-DEMO-BOWL",
+                        "subtotal_vnd": 400000,
+                        "eligible": true
+                    },
+                    {
+                        "sku": "SKU-DEMO-FOOD",
+                        "subtotal_vnd": 120000,
+                        "eligible": false
+                    }
+                ],
+                "pricing_policy": "SIMULATION_EXPLICIT_MIN_CAP",
+                "tax_policy": "SIMULATION_NO_TAX",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 33,
+            "sequence": 4,
+            "at": "2026-11-06 10:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "VALID",
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "subtotal_vnd": 520000,
+                "eligible_subtotal_vnd": 400000,
+                "discount_vnd": 50000,
+                "shipping_vnd": 20000,
+                "total_vnd": 490000,
+                "lines": [
+                    {
+                        "sku": "SKU-DEMO-BOWL",
+                        "subtotal_vnd": 400000,
+                        "eligible": true
+                    },
+                    {
+                        "sku": "SKU-DEMO-FOOD",
+                        "subtotal_vnd": 120000,
+                        "eligible": false
+                    }
+                ],
+                "pricing_policy": "SIMULATION_EXPLICIT_MIN_CAP",
+                "tax_policy": "SIMULATION_NO_TAX",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 33,
+            "sequence": 5,
+            "at": "2026-11-06 10:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "MINIMUM_NOT_MET",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 33,
+            "sequence": 6,
+            "at": "2026-11-06 10:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "VALID",
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "subtotal_vnd": 520000,
+                "eligible_subtotal_vnd": 400000,
+                "discount_vnd": 59999,
+                "shipping_vnd": 20000,
+                "total_vnd": 480001,
+                "lines": [
+                    {
+                        "sku": "SKU-DEMO-BOWL",
+                        "subtotal_vnd": 400000,
+                        "eligible": true
+                    },
+                    {
+                        "sku": "SKU-DEMO-FOOD",
+                        "subtotal_vnd": 120000,
+                        "eligible": false
+                    }
+                ],
+                "pricing_policy": "SIMULATION_EXPLICIT_MIN_CAP",
+                "tax_policy": "SIMULATION_NO_TAX",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 33,
+            "sequence": 7,
+            "at": "2026-11-06 10:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "VALID",
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "subtotal_vnd": 520000,
+                "eligible_subtotal_vnd": 400000,
+                "discount_vnd": 60000,
+                "shipping_vnd": 20000,
+                "total_vnd": 480000,
+                "lines": [
+                    {
+                        "sku": "SKU-DEMO-BOWL",
+                        "subtotal_vnd": 400000,
+                        "eligible": true
+                    },
+                    {
+                        "sku": "SKU-DEMO-FOOD",
+                        "subtotal_vnd": 120000,
+                        "eligible": false
+                    }
+                ],
+                "pricing_policy": "SIMULATION_EXPLICIT_MIN_CAP",
+                "tax_policy": "SIMULATION_NO_TAX",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 33,
+            "sequence": 8,
+            "at": "2026-11-06 10:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "VALID",
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "subtotal_vnd": 520000,
+                "eligible_subtotal_vnd": 400000,
+                "discount_vnd": 60000,
+                "shipping_vnd": 20000,
+                "total_vnd": 480000,
+                "lines": [
+                    {
+                        "sku": "SKU-DEMO-BOWL",
+                        "subtotal_vnd": 400000,
+                        "eligible": true
+                    },
+                    {
+                        "sku": "SKU-DEMO-FOOD",
+                        "subtotal_vnd": 120000,
+                        "eligible": false
+                    }
+                ],
+                "pricing_policy": "SIMULATION_EXPLICIT_MIN_CAP",
+                "tax_policy": "SIMULATION_NO_TAX",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 34,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 34,
+            "sequence": 2,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "PENDING_POLICY",
+                "reason": "ROUNDING_UNCONFIRMED",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 34,
+            "sequence": 3,
+            "at": "2026-11-06 10:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "VALID",
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "subtotal_vnd": 101,
+                "eligible_subtotal_vnd": 101,
+                "discount_vnd": 15,
+                "shipping_vnd": 20000,
+                "total_vnd": 20086,
+                "lines": [
+                    {
+                        "sku": "SKU-DEMO-BOWL",
+                        "subtotal_vnd": 101,
+                        "eligible": true
+                    }
+                ],
+                "pricing_policy": "SIMULATION_BYPASS_MIN_CAP",
+                "tax_policy": "SIMULATION_NO_TAX",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 35,
+            "sequence": 1,
+            "at": "2026-11-06 09:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 35,
+            "sequence": 2,
+            "at": "2026-11-06 10:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "issue",
+            "result": {
+                "status": "ALREADY_ISSUED",
+                "issue": {
+                    "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                    "campaign_id": "DEMO-SIX-MONTHS-2026",
+                    "baby_id": "B-DEMO-01",
+                    "customer_id": "C-DEMO-01",
+                    "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                    "code": "DEMO-15A23762CFDC1891",
+                    "percent": 15,
+                    "dob_version_at_issue": 1,
+                    "issued_at": "2026-11-06 09:00:00",
+                    "expires_at_exclusive": "2026-12-01 00:00:00",
+                    "used_order_id": null,
+                    "status": "ISSUED",
+                    "label": "SIMULATION ONLY"
+                },
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 35,
+            "sequence": 3,
+            "at": "2026-11-06 10:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "mail",
+            "result": {
+                "coupon_id": "COUPON-DEMO-15A23762CFDC1891",
+                "issue_id": "ISSUE-DEMO-15A23762CFDC1891",
+                "status": "SIMULATED_SENT",
+                "error_code": null,
+                "transport": "fake",
+                "coupon_code": "DEMO-15A23762CFDC1891",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 35,
+            "sequence": 4,
+            "at": "2026-11-06 10:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "INVALID_DATA",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 35,
+            "sequence": 5,
+            "at": "2026-11-06 10:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "INVALID_DATA",
+                "label": "SIMULATION ONLY"
+            }
+        },
+        {
+            "context": 35,
+            "sequence": 6,
+            "at": "2026-11-06 10:00:00",
+            "timezone": "Asia\/Ho_Chi_Minh",
+            "action": "validate",
+            "result": {
+                "status": "INVALID_DATA",
+                "label": "SIMULATION ONLY"
+            }
+        }
+    ]
+}

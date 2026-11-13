@@ -1,0 +1,29 @@
+{
+  "label": "SIMULATION ONLY",
+  "contract": "Ban giao 10/11/2026 - synthetic fixtures, not WooCommerce records",
+  "babies": {
+    "B-DEMO-01": {"baby_id": "B-DEMO-01", "customer_id": "C-DEMO-01", "birth_date": "2026-05-06", "dob_version": 1, "marketing_opt_in": true, "dob_approved": true, "registered_at": "2026-10-01 09:00:00"},
+    "B-DEMO-02": {"baby_id": "B-DEMO-02", "customer_id": "C-DEMO-02", "birth_date": "2026-05-15", "dob_version": 1, "marketing_opt_in": false, "dob_approved": true, "registered_at": "2026-10-01 09:00:00"},
+    "B-DEMO-03": {"baby_id": "B-DEMO-03", "customer_id": "C-DEMO-01", "birth_date": "2026-05-06", "dob_version": 1, "marketing_opt_in": true, "dob_approved": true, "registered_at": "2026-10-01 09:00:00"}
+  },
+  "consents": {
+    "C-DEMO-01": {"marketing_opt_in": true, "version": 1, "changed_at": "2026-10-01 09:00:00"},
+    "C-DEMO-02": {"marketing_opt_in": false, "version": 1, "changed_at": "2026-10-01 09:00:00"}
+  },
+  "products": {
+    "SKU-DEMO-BOWL": {"product_id": "P-DEMO-01", "variation_id": null, "sku": "SKU-DEMO-BOWL", "category": "weaning-gear", "eligible": true, "unit_price_vnd": 200000},
+    "SKU-DEMO-FOOD": {"product_id": "P-DEMO-02", "variation_id": null, "sku": "SKU-DEMO-FOOD", "category": "food", "eligible": false, "unit_price_vnd": 120000},
+    "SKU-DEMO-OTHER": {"product_id": "P-DEMO-03", "variation_id": null, "sku": "SKU-DEMO-OTHER", "category": "other", "eligible": false, "unit_price_vnd": 80000},
+    "SKU-DEMO-VARIANT": {"product_id": "P-DEMO-01", "variation_id": "V-DEMO-01", "sku": "SKU-DEMO-VARIANT", "category": "weaning-gear", "eligible": null, "unit_price_vnd": 100000}
+  },
+  "carts": {
+    "mixed": {"customer_id": "C-DEMO-01", "lines": [{"sku": "SKU-DEMO-BOWL", "quantity": 2}, {"sku": "SKU-DEMO-FOOD", "quantity": 1}], "shipping_vnd": 20000, "coupon_ids": []}
+  },
+  "orders": {
+    "O-DEMO-01": {"order_id": "O-DEMO-01", "customer_id": "C-DEMO-01", "coupon_id": null, "order_status": "Pending_Payment", "payment_status": "Unpaid", "lines": [{"sku": "SKU-DEMO-BOWL", "quantity": 2}, {"sku": "SKU-DEMO-FOOD", "quantity": 1}], "shipping_vnd": 20000}
+  },
+  "events": {},
+  "issues": {},
+  "consent_history": [],
+  "logs": []
+}
