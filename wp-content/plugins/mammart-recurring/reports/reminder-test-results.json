@@ -1,0 +1,541 @@
+{
+    "label": "SIMULATION DATA ONLY",
+    "summary": {
+        "PASS": 15,
+        "FAIL": 0,
+        "DEFERRED": 0
+    },
+    "tests": [
+        {
+            "test_id": "REM-01",
+            "description": "Active plan sends one T-2 reminder",
+            "input": {
+                "plan_id": "PLAN-REM-001",
+                "initial_status": "Active",
+                "frequency_days": 28,
+                "completed_at": "2026-11-18",
+                "expected_date": "2026-12-16",
+                "runs": [
+                    "2026-12-14T08:00:00+00:00"
+                ],
+                "fake_mail_failure_reason": null,
+                "confirmed_cycles": []
+            },
+            "expected": {
+                "attempts": 1,
+                "count": 1,
+                "events": [
+                    "REMINDER_CREATED",
+                    "EMAIL_SENT"
+                ],
+                "keys": [
+                    "PLAN-REM-001@2026-12-16"
+                ],
+                "reminder_date": "2026-12-14",
+                "reminder_status": "SENT",
+                "sent_at": "2026-12-14T08:00:00+00:00"
+            },
+            "actual": {
+                "attempts": 1,
+                "count": 1,
+                "events": [
+                    "REMINDER_CREATED",
+                    "EMAIL_SENT"
+                ],
+                "keys": [
+                    "PLAN-REM-001@2026-12-16"
+                ],
+                "reminder_date": "2026-12-14",
+                "reminder_status": "SENT",
+                "sent_at": "2026-12-14T08:00:00+00:00"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "REM-02",
+            "description": "Three runs during T-2 send once",
+            "input": {
+                "plan_id": "PLAN-REM-001",
+                "initial_status": "Active",
+                "frequency_days": 28,
+                "completed_at": "2026-11-18",
+                "expected_date": "2026-12-16",
+                "runs": [
+                    "2026-12-14T08:00:00+00:00",
+                    "2026-12-14T08:05:00+00:00",
+                    "2026-12-14T12:00:00+00:00"
+                ],
+                "fake_mail_failure_reason": null,
+                "confirmed_cycles": []
+            },
+            "expected": {
+                "attempts": 1,
+                "count": 1,
+                "events": [
+                    "REMINDER_CREATED",
+                    "EMAIL_SENT",
+                    "DUPLICATE_SKIPPED",
+                    "DUPLICATE_SKIPPED"
+                ],
+                "keys": [
+                    "PLAN-REM-001@2026-12-16"
+                ],
+                "reminder_date": "2026-12-14",
+                "reminder_status": "SENT",
+                "sent_at": "2026-12-14T08:00:00+00:00"
+            },
+            "actual": {
+                "attempts": 1,
+                "count": 1,
+                "events": [
+                    "REMINDER_CREATED",
+                    "EMAIL_SENT",
+                    "DUPLICATE_SKIPPED",
+                    "DUPLICATE_SKIPPED"
+                ],
+                "keys": [
+                    "PLAN-REM-001@2026-12-16"
+                ],
+                "reminder_date": "2026-12-14",
+                "reminder_status": "SENT",
+                "sent_at": "2026-12-14T08:00:00+00:00"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "REM-03",
+            "description": "Before T-2 there is no reminder",
+            "input": {
+                "plan_id": "PLAN-REM-001",
+                "initial_status": "Active",
+                "frequency_days": 28,
+                "completed_at": "2026-11-18",
+                "expected_date": "2026-12-16",
+                "runs": [
+                    "2026-12-13T08:00:00+00:00"
+                ],
+                "fake_mail_failure_reason": null,
+                "confirmed_cycles": []
+            },
+            "expected": {
+                "attempts": 0,
+                "count": 0,
+                "events": []
+            },
+            "actual": {
+                "attempts": 0,
+                "count": 0,
+                "events": []
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "REM-04",
+            "description": "Paused plan is skipped",
+            "input": {
+                "plan_id": "PLAN-REM-001",
+                "initial_status": "Paused",
+                "frequency_days": 28,
+                "completed_at": "2026-11-18",
+                "expected_date": "2026-12-16",
+                "runs": [
+                    "2026-12-14T08:00:00+00:00"
+                ],
+                "fake_mail_failure_reason": null,
+                "confirmed_cycles": []
+            },
+            "expected": {
+                "attempts": 0,
+                "count": 0,
+                "events": [],
+                "plan_status": "Paused"
+            },
+            "actual": {
+                "attempts": 0,
+                "count": 0,
+                "events": [],
+                "plan_status": "Paused"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "REM-05",
+            "description": "Cancelled plan is skipped",
+            "input": {
+                "plan_id": "PLAN-REM-001",
+                "initial_status": "Cancelled",
+                "frequency_days": 28,
+                "completed_at": "2026-11-18",
+                "expected_date": "2026-12-16",
+                "runs": [
+                    "2026-12-14T08:00:00+00:00"
+                ],
+                "fake_mail_failure_reason": null,
+                "confirmed_cycles": []
+            },
+            "expected": {
+                "attempts": 0,
+                "count": 0,
+                "events": [],
+                "plan_status": "Cancelled"
+            },
+            "actual": {
+                "attempts": 0,
+                "count": 0,
+                "events": [],
+                "plan_status": "Cancelled"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "REM-06",
+            "description": "Pending plan is skipped",
+            "input": {
+                "plan_id": "PLAN-REM-001",
+                "initial_status": "PendingActivation",
+                "frequency_days": 28,
+                "completed_at": null,
+                "expected_date": null,
+                "runs": [
+                    "2026-12-14T08:00:00+00:00"
+                ],
+                "fake_mail_failure_reason": null,
+                "confirmed_cycles": []
+            },
+            "expected": {
+                "attempts": 0,
+                "count": 0,
+                "events": [],
+                "plan_status": "PendingActivation"
+            },
+            "actual": {
+                "attempts": 0,
+                "count": 0,
+                "events": [],
+                "plan_status": "PendingActivation"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "REM-07",
+            "description": "Fake mail failure is logged",
+            "input": {
+                "plan_id": "PLAN-REM-001",
+                "initial_status": "Active",
+                "frequency_days": 28,
+                "completed_at": "2026-11-18",
+                "expected_date": "2026-12-16",
+                "runs": [
+                    "2026-12-14T08:00:00+00:00"
+                ],
+                "fake_mail_failure_reason": "SIMULATED_MAIL_FAILURE",
+                "confirmed_cycles": []
+            },
+            "expected": {
+                "attempts": 1,
+                "count": 1,
+                "events": [
+                    "REMINDER_CREATED",
+                    "EMAIL_FAILED"
+                ],
+                "failure_reason": "SIMULATED_MAIL_FAILURE",
+                "reminder_status": "FAILED",
+                "sent_at": null
+            },
+            "actual": {
+                "attempts": 1,
+                "count": 1,
+                "events": [
+                    "REMINDER_CREATED",
+                    "EMAIL_FAILED"
+                ],
+                "failure_reason": "SIMULATED_MAIL_FAILURE",
+                "reminder_status": "FAILED",
+                "sent_at": null
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "REM-08",
+            "description": "Failed mail is neither retried nor duplicated",
+            "input": {
+                "plan_id": "PLAN-REM-001",
+                "initial_status": "Active",
+                "frequency_days": 28,
+                "completed_at": "2026-11-18",
+                "expected_date": "2026-12-16",
+                "runs": [
+                    "2026-12-14T08:00:00+00:00",
+                    "2026-12-14T08:05:00+00:00"
+                ],
+                "fake_mail_failure_reason": "SIMULATED_MAIL_FAILURE",
+                "confirmed_cycles": []
+            },
+            "expected": {
+                "attempts": 1,
+                "count": 1,
+                "events": [
+                    "REMINDER_CREATED",
+                    "EMAIL_FAILED",
+                    "DUPLICATE_SKIPPED"
+                ],
+                "failure_reason": "SIMULATED_MAIL_FAILURE",
+                "reminder_status": "FAILED",
+                "sent_at": null
+            },
+            "actual": {
+                "attempts": 1,
+                "count": 1,
+                "events": [
+                    "REMINDER_CREATED",
+                    "EMAIL_FAILED",
+                    "DUPLICATE_SKIPPED"
+                ],
+                "failure_reason": "SIMULATED_MAIL_FAILURE",
+                "reminder_status": "FAILED",
+                "sent_at": null
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "REM-09",
+            "description": "Expected date has not ended at 23:59:59 UTC",
+            "input": {
+                "plan_id": "PLAN-REM-001",
+                "initial_status": "Active",
+                "frequency_days": 28,
+                "completed_at": "2026-11-18",
+                "expected_date": "2026-12-16",
+                "runs": [
+                    "2026-12-16T23:59:59+00:00"
+                ],
+                "fake_mail_failure_reason": null,
+                "confirmed_cycles": []
+            },
+            "expected": {
+                "attempts": 0,
+                "count": 0,
+                "events": [],
+                "expected_date": "2026-12-16",
+                "plan_status": "Active"
+            },
+            "actual": {
+                "attempts": 0,
+                "count": 0,
+                "events": [],
+                "expected_date": "2026-12-16",
+                "plan_status": "Active"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "REM-10",
+            "description": "The day after expected date pauses the plan without advancing the cycle",
+            "input": {
+                "plan_id": "PLAN-REM-001",
+                "initial_status": "Active",
+                "frequency_days": 28,
+                "completed_at": "2026-11-18",
+                "expected_date": "2026-12-16",
+                "runs": [
+                    "2026-12-17T00:00:00+00:00"
+                ],
+                "fake_mail_failure_reason": null,
+                "confirmed_cycles": []
+            },
+            "expected": {
+                "attempts": 0,
+                "count": 0,
+                "events": [
+                    "PLAN_PAUSED_MISSED_DATE"
+                ],
+                "expected_date": "2026-12-16",
+                "pause_reasons": [
+                    "MISSED_EXPECTED_DATE"
+                ],
+                "plan_status": "Paused"
+            },
+            "actual": {
+                "attempts": 0,
+                "count": 0,
+                "events": [
+                    "PLAN_PAUSED_MISSED_DATE"
+                ],
+                "expected_date": "2026-12-16",
+                "pause_reasons": [
+                    "MISSED_EXPECTED_DATE"
+                ],
+                "plan_status": "Paused"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "REM-11",
+            "description": "Repeating an expired run logs only one pause",
+            "input": {
+                "plan_id": "PLAN-REM-001",
+                "initial_status": "Active",
+                "frequency_days": 28,
+                "completed_at": "2026-11-18",
+                "expected_date": "2026-12-16",
+                "runs": [
+                    "2026-12-17T00:00:00+00:00",
+                    "2026-12-18T08:00:00+00:00"
+                ],
+                "fake_mail_failure_reason": null,
+                "confirmed_cycles": []
+            },
+            "expected": {
+                "attempts": 0,
+                "count": 0,
+                "events": [
+                    "PLAN_PAUSED_MISSED_DATE"
+                ],
+                "expected_date": "2026-12-16",
+                "plan_status": "Paused"
+            },
+            "actual": {
+                "attempts": 0,
+                "count": 0,
+                "events": [
+                    "PLAN_PAUSED_MISSED_DATE"
+                ],
+                "expected_date": "2026-12-16",
+                "plan_status": "Paused"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "REM-12",
+            "description": "Two plans on the same date have distinct keys",
+            "input": {
+                "plan_id": "PLAN-REM-001",
+                "initial_status": "Active",
+                "frequency_days": 28,
+                "completed_at": "2026-11-18",
+                "expected_date": "2026-12-16",
+                "runs": [
+                    "2026-12-14T08:00:00+00:00"
+                ],
+                "fake_mail_failure_reason": null,
+                "confirmed_cycles": [],
+                "second_plan_id": "PLAN-REM-002"
+            },
+            "expected": {
+                "attempts": 2,
+                "count": 2,
+                "keys": [
+                    "PLAN-REM-001@2026-12-16",
+                    "PLAN-REM-002@2026-12-16"
+                ]
+            },
+            "actual": {
+                "attempts": 2,
+                "count": 2,
+                "keys": [
+                    "PLAN-REM-001@2026-12-16",
+                    "PLAN-REM-002@2026-12-16"
+                ]
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "REM-13",
+            "description": "Two cycles for one plan have distinct keys",
+            "input": {
+                "plan_id": "PLAN-REM-001",
+                "initial_status": "Active",
+                "frequency_days": 28,
+                "completed_at": "2026-11-18",
+                "expected_date": "2026-12-16",
+                "runs": [
+                    "2026-12-14T08:00:00+00:00",
+                    "2027-01-11T08:00:00+00:00"
+                ],
+                "fake_mail_failure_reason": null,
+                "confirmed_cycles": [],
+                "cycle_2_completed_at": "2026-12-16",
+                "cycle_2_expected_date": "2027-01-13"
+            },
+            "expected": {
+                "attempts": 2,
+                "count": 2,
+                "keys": [
+                    "PLAN-REM-001@2026-12-16",
+                    "PLAN-REM-001@2027-01-13"
+                ]
+            },
+            "actual": {
+                "attempts": 2,
+                "count": 2,
+                "keys": [
+                    "PLAN-REM-001@2026-12-16",
+                    "PLAN-REM-001@2027-01-13"
+                ]
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "REM-14",
+            "description": "A confirmed cycle does not pause after its expected date",
+            "input": {
+                "plan_id": "PLAN-REM-001",
+                "initial_status": "Active",
+                "frequency_days": 28,
+                "completed_at": "2026-11-18",
+                "expected_date": "2026-12-16",
+                "runs": [
+                    "2026-12-17T00:00:00+00:00"
+                ],
+                "fake_mail_failure_reason": null,
+                "confirmed_cycles": [
+                    "PLAN-REM-001@2026-12-16"
+                ]
+            },
+            "expected": {
+                "attempts": 0,
+                "count": 0,
+                "events": [],
+                "expected_date": "2026-12-16",
+                "plan_status": "Active"
+            },
+            "actual": {
+                "attempts": 0,
+                "count": 0,
+                "events": [],
+                "expected_date": "2026-12-16",
+                "plan_status": "Active"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "REM-15",
+            "description": "Missing the T-2 run does not send a late reminder at T-1",
+            "input": {
+                "plan_id": "PLAN-REM-001",
+                "initial_status": "Active",
+                "frequency_days": 28,
+                "completed_at": "2026-11-18",
+                "expected_date": "2026-12-16",
+                "runs": [
+                    "2026-12-15T08:00:00+00:00"
+                ],
+                "fake_mail_failure_reason": null,
+                "confirmed_cycles": []
+            },
+            "expected": {
+                "attempts": 0,
+                "count": 0,
+                "events": [],
+                "plan_status": "Active"
+            },
+            "actual": {
+                "attempts": 0,
+                "count": 0,
+                "events": [],
+                "plan_status": "Active"
+            },
+            "result": "PASS"
+        }
+    ]
+}

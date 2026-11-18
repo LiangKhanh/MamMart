@@ -1,0 +1,935 @@
+{
+    "label": "SIMULATION DATA ONLY",
+    "summary": {
+        "PASS": 15,
+        "FAIL": 0,
+        "DEFERRED": 0
+    },
+    "tests": [
+        {
+            "test_id": "EVT-01",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "O-1001",
+                    "quantity": 1,
+                    "frequencyDays": 28,
+                    "variationId": "M"
+                },
+                "initial_status": "PendingActivation",
+                "now": "2026-12-01T08:00:00+00:00",
+                "operations": [
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-001",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-11-18T10:00:00Z",
+                            "order_id": "O-1001",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-001",
+                            "is_first_order": true,
+                            "completed_at": "2026-11-18T10:00:00Z"
+                        }
+                    }
+                ]
+            },
+            "expected": {
+                "next_expected_date": "2026-12-16",
+                "status": "Active"
+            },
+            "actual": {
+                "next_expected_date": "2026-12-16",
+                "status": "Active"
+            },
+            "result": "PASS",
+            "rule_type": "CHOT"
+        },
+        {
+            "test_id": "EVT-02",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "O-1001",
+                    "quantity": 1,
+                    "frequencyDays": 28,
+                    "variationId": "M"
+                },
+                "initial_status": "PendingActivation",
+                "now": "2026-12-01T08:00:00+00:00",
+                "operations": [
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-001",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-11-18T10:00:00Z",
+                            "order_id": "O-1001",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-001",
+                            "is_first_order": true,
+                            "completed_at": "2026-11-18T10:00:00Z"
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-PLACED",
+                            "event_type": "OrderPlaced",
+                            "event_time": "2026-12-15T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-002",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-12-17T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false,
+                            "completed_at": "2026-12-17T10:00:00Z"
+                        }
+                    }
+                ]
+            },
+            "expected": {
+                "last_reason": "recurring_cycle_recalculated",
+                "next_expected_date": "2027-01-14",
+                "status": "Active"
+            },
+            "actual": {
+                "last_reason": "recurring_cycle_recalculated",
+                "next_expected_date": "2027-01-14",
+                "status": "Active"
+            },
+            "result": "PASS",
+            "rule_type": "CHOT"
+        },
+        {
+            "test_id": "EVT-03",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "O-1001",
+                    "quantity": 1,
+                    "frequencyDays": 28,
+                    "variationId": "M"
+                },
+                "initial_status": "PendingActivation",
+                "now": "2026-12-01T08:00:00+00:00",
+                "operations": [
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-001",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-11-18T10:00:00Z",
+                            "order_id": "O-1001",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-001",
+                            "is_first_order": true,
+                            "completed_at": "2026-11-18T10:00:00Z"
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-PLACED",
+                            "event_type": "OrderPlaced",
+                            "event_time": "2026-12-15T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-002",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-12-17T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false,
+                            "completed_at": "2026-12-17T10:00:00Z"
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-002",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-12-17T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false,
+                            "completed_at": "2026-12-17T10:00:00Z"
+                        }
+                    }
+                ]
+            },
+            "expected": {
+                "last_reason": "duplicate_event_skipped",
+                "next_expected_date": "2027-01-14",
+                "recalculation_count": 1
+            },
+            "actual": {
+                "last_reason": "duplicate_event_skipped",
+                "next_expected_date": "2027-01-14",
+                "recalculation_count": 1
+            },
+            "result": "PASS",
+            "rule_type": "CHOT"
+        },
+        {
+            "test_id": "EVT-04",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "O-1001",
+                    "quantity": 1,
+                    "frequencyDays": 28,
+                    "variationId": "M"
+                },
+                "initial_status": "PendingActivation",
+                "now": "2026-12-01T08:00:00+00:00",
+                "operations": [
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-001",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-11-18T10:00:00Z",
+                            "order_id": "O-1001",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-001",
+                            "is_first_order": true,
+                            "completed_at": "2026-11-18T10:00:00Z"
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-PLACED",
+                            "event_type": "OrderPlaced",
+                            "event_time": "2026-12-15T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-003",
+                            "event_type": "OrderCancelled",
+                            "event_time": "2026-12-16T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false,
+                            "cancelled_at": "2026-12-16T10:00:00Z"
+                        }
+                    }
+                ]
+            },
+            "expected": {
+                "next_expected_date": "2026-12-16",
+                "status": "Paused"
+            },
+            "actual": {
+                "next_expected_date": "2026-12-16",
+                "status": "Paused"
+            },
+            "result": "PASS",
+            "rule_type": "CHOT"
+        },
+        {
+            "test_id": "EVT-05",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "O-1001",
+                    "quantity": 1,
+                    "frequencyDays": 28,
+                    "variationId": "M"
+                },
+                "initial_status": "PendingActivation",
+                "now": "2026-12-01T08:00:00+00:00",
+                "operations": [
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-001",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-11-18T10:00:00Z",
+                            "order_id": "O-1001",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-001",
+                            "is_first_order": true,
+                            "completed_at": "2026-11-18T10:00:00Z"
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-PAYMENT",
+                            "event_type": "PaymentConfirmed",
+                            "event_time": "2026-12-15T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false
+                        }
+                    }
+                ]
+            },
+            "expected": {
+                "last_reason": "payment_confirmed_ignored",
+                "next_expected_date": "2026-12-16"
+            },
+            "actual": {
+                "last_reason": "payment_confirmed_ignored",
+                "next_expected_date": "2026-12-16"
+            },
+            "result": "PASS",
+            "rule_type": "CHOT"
+        },
+        {
+            "test_id": "EVT-06",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "O-1001",
+                    "quantity": 1,
+                    "frequencyDays": 28,
+                    "variationId": "M"
+                },
+                "initial_status": "PendingActivation",
+                "now": "2026-12-01T08:00:00+00:00",
+                "operations": [
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-001",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-11-18T10:00:00Z",
+                            "order_id": "O-1001",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-001",
+                            "is_first_order": true,
+                            "completed_at": "2026-11-18T10:00:00Z"
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-PLACED",
+                            "event_type": "OrderPlaced",
+                            "event_time": "2026-12-15T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "WRONG",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false
+                        }
+                    }
+                ]
+            },
+            "expected": {
+                "error": "CUSTOMER_MISMATCH",
+                "next_expected_date": "2026-12-16"
+            },
+            "actual": {
+                "error": "CUSTOMER_MISMATCH",
+                "next_expected_date": "2026-12-16"
+            },
+            "result": "PASS",
+            "rule_type": "CHOT"
+        },
+        {
+            "test_id": "EVT-07",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "O-1001",
+                    "quantity": 1,
+                    "frequencyDays": 28,
+                    "variationId": "M"
+                },
+                "initial_status": "PendingActivation",
+                "now": "2026-12-01T08:00:00+00:00",
+                "operations": [
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-001",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-11-18T10:00:00Z",
+                            "order_id": "O-1001",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-001",
+                            "is_first_order": true,
+                            "completed_at": "2026-11-18T10:00:00Z"
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-PLACED",
+                            "event_type": "OrderPlaced",
+                            "event_time": "2026-12-15T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-002",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-12-17T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "WRONG",
+                            "is_first_order": false,
+                            "completed_at": "2026-12-17T10:00:00Z"
+                        }
+                    }
+                ]
+            },
+            "expected": {
+                "error": "ORDER_PERIOD_MISMATCH",
+                "next_expected_date": "2026-12-16"
+            },
+            "actual": {
+                "error": "ORDER_PERIOD_MISMATCH",
+                "next_expected_date": "2026-12-16"
+            },
+            "result": "PASS",
+            "rule_type": "CHOT"
+        },
+        {
+            "test_id": "EVT-08",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "O-1001",
+                    "quantity": 1,
+                    "frequencyDays": 28,
+                    "variationId": "M"
+                },
+                "initial_status": "PendingActivation",
+                "now": "2026-12-01T08:00:00+00:00",
+                "operations": [
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-001",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-11-18T10:00:00Z",
+                            "order_id": "O-1001",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-001",
+                            "is_first_order": true,
+                            "completed_at": "2026-11-18T10:00:00Z"
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-001",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-11-18T10:00:00Z",
+                            "order_id": "O-1001",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-001",
+                            "is_first_order": true,
+                            "completed_at": "2026-11-19"
+                        }
+                    }
+                ]
+            },
+            "expected": {
+                "error": "EVENT_ID_CONFLICT",
+                "next_expected_date": "2026-12-16"
+            },
+            "actual": {
+                "error": "EVENT_ID_CONFLICT",
+                "next_expected_date": "2026-12-16"
+            },
+            "result": "PASS",
+            "rule_type": "CHOT"
+        },
+        {
+            "test_id": "EVT-09",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "O-1001",
+                    "quantity": 1,
+                    "frequencyDays": 28,
+                    "variationId": "M"
+                },
+                "initial_status": "PendingActivation",
+                "now": "2026-12-01T08:00:00+00:00",
+                "operations": [
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-001",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-11-18T10:00:00Z",
+                            "order_id": "O-1001",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-001",
+                            "is_first_order": true,
+                            "completed_at": "2026-11-18T10:00:00Z"
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-PLACED",
+                            "event_type": "OrderPlaced",
+                            "event_time": "2026-12-15T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false
+                        }
+                    },
+                    {
+                        "action": "run",
+                        "value": "2026-12-17T08:00:00Z",
+                        "now": "2026-12-01T08:00:00+00:00"
+                    }
+                ]
+            },
+            "expected": {
+                "next_expected_date": "2026-12-16",
+                "reminder_count": 0,
+                "status": "Active"
+            },
+            "actual": {
+                "next_expected_date": "2026-12-16",
+                "reminder_count": 0,
+                "status": "Active"
+            },
+            "result": "PASS",
+            "rule_type": "CHOT"
+        },
+        {
+            "test_id": "EVT-10",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "O-1001",
+                    "quantity": 1,
+                    "frequencyDays": 28,
+                    "variationId": "M"
+                },
+                "initial_status": "PendingActivation",
+                "now": "2026-12-01T08:00:00+00:00",
+                "operations": [
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-001",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-11-18T10:00:00Z",
+                            "order_id": "O-1001",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-001",
+                            "is_first_order": true,
+                            "completed_at": "2026-11-18T10:00:00Z"
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-002",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-12-17T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": true,
+                            "completed_at": "2026-12-17T10:00:00Z"
+                        }
+                    }
+                ]
+            },
+            "expected": {
+                "last_reason": "not_initial_order",
+                "next_expected_date": "2026-12-16"
+            },
+            "actual": {
+                "last_reason": "not_initial_order",
+                "next_expected_date": "2026-12-16"
+            },
+            "result": "PASS",
+            "rule_type": "CHOT"
+        },
+        {
+            "test_id": "EVT-11",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "O-1001",
+                    "quantity": 1,
+                    "frequencyDays": 28,
+                    "variationId": "M"
+                },
+                "initial_status": "PendingActivation",
+                "now": "2026-12-01T08:00:00+00:00",
+                "operations": [
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-001",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-11-18T10:00:00Z",
+                            "order_id": "O-1001",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-001",
+                            "is_first_order": true,
+                            "completed_at": "2026-11-18T10:00:00Z"
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-PLACED",
+                            "event_type": "OrderPlaced",
+                            "event_time": "2026-12-15T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": "false"
+                        }
+                    }
+                ]
+            },
+            "expected": {
+                "error": "is_first_order must be boolean.",
+                "next_expected_date": "2026-12-16"
+            },
+            "actual": {
+                "error": "is_first_order must be boolean.",
+                "next_expected_date": "2026-12-16"
+            },
+            "result": "PASS",
+            "rule_type": "CHOT"
+        },
+        {
+            "test_id": "EVT-12",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "O-1001",
+                    "quantity": 1,
+                    "frequencyDays": 28,
+                    "variationId": "M"
+                },
+                "initial_status": "PendingActivation",
+                "now": "2026-12-01T08:00:00+00:00",
+                "operations": [
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-001",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-11-18T10:00:00Z",
+                            "order_id": "O-1001",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-001",
+                            "is_first_order": true,
+                            "completed_at": "2026-11-18T10:00:00Z"
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-PLACED",
+                            "event_type": "OrderPlaced",
+                            "event_time": "2026-12-15T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-002",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-12-17T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false,
+                            "completed_at": "2026-12-17T10:00:00Z"
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "SAME-ORDER-NEW-EVENT",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-12-17T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false,
+                            "completed_at": "2026-12-17T10:00:00Z"
+                        }
+                    }
+                ]
+            },
+            "expected": {
+                "last_reason": "order_already_processed",
+                "next_expected_date": "2027-01-14",
+                "recalculation_count": 1
+            },
+            "actual": {
+                "last_reason": "order_already_processed",
+                "next_expected_date": "2027-01-14",
+                "recalculation_count": 1
+            },
+            "result": "PASS",
+            "rule_type": "CHOT"
+        },
+        {
+            "test_id": "EVT-13",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "O-1001",
+                    "quantity": 1,
+                    "frequencyDays": 28,
+                    "variationId": "M"
+                },
+                "initial_status": "PendingActivation",
+                "now": "2026-12-01T08:00:00+00:00",
+                "operations": [
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-001",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-11-18T10:00:00Z",
+                            "order_id": "O-1001",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-001",
+                            "is_first_order": true,
+                            "completed_at": "2026-11-18T10:00:00Z"
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-PLACED",
+                            "event_type": "OrderPlaced",
+                            "event_time": "2026-12-15T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false
+                        }
+                    },
+                    {
+                        "action": "postpone",
+                        "value": "2026-12-23",
+                        "now": "2026-12-01T08:00:00+00:00"
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-002",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-12-17T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false,
+                            "completed_at": "2026-12-17T10:00:00Z"
+                        }
+                    }
+                ]
+            },
+            "expected": {
+                "error": "ORDER_PERIOD_MISMATCH",
+                "next_expected_date": "2026-12-23"
+            },
+            "actual": {
+                "error": "ORDER_PERIOD_MISMATCH",
+                "next_expected_date": "2026-12-23"
+            },
+            "result": "PASS",
+            "rule_type": "CHOT"
+        },
+        {
+            "test_id": "EVT-14",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "O-1001",
+                    "quantity": 1,
+                    "frequencyDays": 28,
+                    "variationId": "M"
+                },
+                "initial_status": "PendingActivation",
+                "now": "2026-12-01T08:00:00+00:00",
+                "operations": [
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-001",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-11-18T10:00:00Z",
+                            "order_id": "O-1001",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-001",
+                            "is_first_order": true,
+                            "completed_at": "2026-11-18T10:00:00Z"
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-PLACED",
+                            "event_type": "OrderPlaced",
+                            "event_time": "2026-12-15T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false
+                        }
+                    },
+                    {
+                        "action": "cancel",
+                        "value": null,
+                        "now": "2026-12-01T08:00:00+00:00"
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-002",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-12-17T10:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false,
+                            "completed_at": "2026-12-17T10:00:00Z"
+                        }
+                    }
+                ]
+            },
+            "expected": {
+                "error": "RECURRING_PLAN_NOT_ACTIVE",
+                "status": "Cancelled"
+            },
+            "actual": {
+                "error": "RECURRING_PLAN_NOT_ACTIVE",
+                "status": "Cancelled"
+            },
+            "result": "PASS",
+            "rule_type": "CHOT"
+        },
+        {
+            "test_id": "EVT-15",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "O-1001",
+                    "quantity": 1,
+                    "frequencyDays": 28,
+                    "variationId": "M"
+                },
+                "initial_status": "PendingActivation",
+                "now": "2026-12-01T08:00:00+00:00",
+                "operations": [
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-001",
+                            "event_type": "OrderCompleted",
+                            "event_time": "2026-11-18T10:00:00Z",
+                            "order_id": "O-1001",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-001",
+                            "is_first_order": true,
+                            "completed_at": "2026-11-18T10:00:00Z"
+                        }
+                    },
+                    {
+                        "fake_event": {
+                            "event_id": "EV-LO-PLACED",
+                            "event_type": "OrderPlaced",
+                            "event_time": "2026-02-30T08:00:00Z",
+                            "order_id": "O-1002",
+                            "customer_id": "C001",
+                            "plan_id": "PLAN-001",
+                            "period_id": "PERIOD-002",
+                            "is_first_order": false
+                        }
+                    }
+                ]
+            },
+            "expected": {
+                "error": "event_time must be a valid YYYY-MM-DD date or ISO-8601 timestamp.",
+                "next_expected_date": "2026-12-16"
+            },
+            "actual": {
+                "error": "event_time must be a valid YYYY-MM-DD date or ISO-8601 timestamp.",
+                "next_expected_date": "2026-12-16"
+            },
+            "result": "PASS",
+            "rule_type": "CHOT"
+        }
+    ]
+}

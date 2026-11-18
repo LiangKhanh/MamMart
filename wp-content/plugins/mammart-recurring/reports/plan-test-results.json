@@ -1,0 +1,628 @@
+{
+    "label": "SIMULATION DATA ONLY",
+    "summary": {
+        "PASS": 19,
+        "FAIL": 0,
+        "DEFERRED": 0
+    },
+    "tests": [
+        {
+            "test_id": "PLAN-01",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 2,
+                    "variationId": "SIZE-M"
+                },
+                "events": [],
+                "actions": []
+            },
+            "expected": {
+                "frequency_days": 28,
+                "next_expected_date": null,
+                "status": "PendingActivation"
+            },
+            "actual": {
+                "frequency_days": 28,
+                "next_expected_date": null,
+                "status": "PendingActivation"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "PLAN-02",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 2,
+                    "variationId": "SIZE-M",
+                    "frequencyDays": 21
+                },
+                "events": [],
+                "actions": []
+            },
+            "expected": {
+                "frequency_days": 21
+            },
+            "actual": {
+                "frequency_days": 21
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "PLAN-03",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 2,
+                    "variationId": "SIZE-M",
+                    "frequencyDays": 35
+                },
+                "events": [],
+                "actions": []
+            },
+            "expected": {
+                "frequency_days": 35
+            },
+            "actual": {
+                "frequency_days": 35
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "PLAN-04",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 2,
+                    "variationId": "SIZE-M",
+                    "frequencyDays": 30
+                },
+                "events": [],
+                "actions": []
+            },
+            "expected": {
+                "error": "Frequency must be 21, 28 or 35 days."
+            },
+            "actual": {
+                "error": "Frequency must be 21, 28 or 35 days."
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "PLAN-05",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 0,
+                    "variationId": "SIZE-M"
+                },
+                "events": [],
+                "actions": []
+            },
+            "expected": {
+                "error": "Quantity must be positive."
+            },
+            "actual": {
+                "error": "Quantity must be positive."
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "PLAN-06",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 2,
+                    "variationId": "SIZE-M",
+                    "frequencyDays": 21
+                },
+                "events": [
+                    {
+                        "event_id": "PLAN-INITIAL-COMPLETED",
+                        "event_time": "2026-11-18T10:00:00Z",
+                        "customer_id": "C001",
+                        "period_id": "INITIAL-FAKE-INITIAL-001",
+                        "is_first_order": true,
+                        "event_type": "OrderCompleted",
+                        "order_id": "FAKE-INITIAL-001",
+                        "completed_at": "2026-11-18",
+                        "plan_id": "PLAN-C001"
+                    }
+                ],
+                "actions": []
+            },
+            "expected": {
+                "next_expected_date": "2026-12-09",
+                "status": "Active"
+            },
+            "actual": {
+                "next_expected_date": "2026-12-09",
+                "status": "Active"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "PLAN-07",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 2,
+                    "variationId": "SIZE-M"
+                },
+                "events": [
+                    {
+                        "event_id": "PLAN-INITIAL-COMPLETED",
+                        "event_time": "2026-11-18T10:00:00Z",
+                        "customer_id": "C001",
+                        "period_id": "INITIAL-FAKE-INITIAL-001",
+                        "is_first_order": true,
+                        "event_type": "OrderCompleted",
+                        "order_id": "FAKE-INITIAL-001",
+                        "completed_at": "2026-11-18",
+                        "plan_id": "PLAN-C001"
+                    }
+                ],
+                "actions": []
+            },
+            "expected": {
+                "next_expected_date": "2026-12-16",
+                "status": "Active"
+            },
+            "actual": {
+                "next_expected_date": "2026-12-16",
+                "status": "Active"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "PLAN-08",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 2,
+                    "variationId": "SIZE-M"
+                },
+                "events": [
+                    {
+                        "event_id": "PLAN-PAYMENT-TRACE",
+                        "event_time": "2026-11-18T10:00:00Z",
+                        "customer_id": "C001",
+                        "period_id": "INITIAL-FAKE-INITIAL-001",
+                        "is_first_order": true,
+                        "event_type": "PaymentConfirmed",
+                        "order_id": "FAKE-INITIAL-001",
+                        "plan_id": "PLAN-C001"
+                    }
+                ],
+                "actions": []
+            },
+            "expected": {
+                "next_expected_date": null,
+                "status": "PendingActivation"
+            },
+            "actual": {
+                "next_expected_date": null,
+                "status": "PendingActivation"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "PLAN-09",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 2,
+                    "variationId": "SIZE-M"
+                },
+                "events": [
+                    {
+                        "event_id": "PLAN-INITIAL-COMPLETED",
+                        "event_time": "2026-11-18T10:00:00Z",
+                        "customer_id": "C001",
+                        "period_id": "INITIAL-FAKE-INITIAL-001",
+                        "is_first_order": true,
+                        "event_type": "OrderCompleted",
+                        "order_id": "FAKE-INITIAL-001",
+                        "completed_at": "2026-11-18",
+                        "plan_id": "PLAN-C001"
+                    },
+                    {
+                        "event_id": "PLAN-REORDER-CANCELLED",
+                        "event_time": "2026-12-15T10:00:00Z",
+                        "customer_id": "C001",
+                        "period_id": "PLAN-C001@2026-12-16",
+                        "is_first_order": false,
+                        "event_type": "OrderCancelled",
+                        "order_id": "FAKE-REORDER-002",
+                        "cancelled_at": "2026-12-15",
+                        "plan_id": "PLAN-C001"
+                    }
+                ],
+                "actions": []
+            },
+            "expected": {
+                "next_expected_date": "2026-12-16",
+                "status": "Paused"
+            },
+            "actual": {
+                "next_expected_date": "2026-12-16",
+                "status": "Paused"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "PLAN-10",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 2,
+                    "variationId": "SIZE-M"
+                },
+                "events": [
+                    {
+                        "event_id": "PLAN-INITIAL-CANCELLED",
+                        "event_time": "2026-11-17T10:00:00Z",
+                        "customer_id": "C001",
+                        "period_id": "INITIAL-FAKE-INITIAL-001",
+                        "is_first_order": true,
+                        "event_type": "OrderCancelled",
+                        "order_id": "FAKE-INITIAL-001",
+                        "cancelled_at": "2026-11-17",
+                        "plan_id": "PLAN-C001"
+                    }
+                ],
+                "actions": []
+            },
+            "expected": {
+                "next_expected_date": null,
+                "status": "PendingActivation"
+            },
+            "actual": {
+                "next_expected_date": null,
+                "status": "PendingActivation"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "PLAN-11",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 2,
+                    "variationId": "SIZE-M"
+                },
+                "events": [],
+                "actions": [
+                    "cancel",
+                    "resume"
+                ]
+            },
+            "expected": {
+                "error": "PLAN_CANCELLED"
+            },
+            "actual": {
+                "error": "PLAN_CANCELLED"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "PLAN-12",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P003",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 2,
+                    "variationId": "SIZE-M"
+                },
+                "events": [],
+                "actions": []
+            },
+            "expected": {
+                "error": "Product is unknown or ineligible in the sandbox."
+            },
+            "actual": {
+                "error": "Product is unknown or ineligible in the sandbox."
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "PLAN-13",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P999",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 2,
+                    "variationId": "SIZE-M"
+                },
+                "events": [],
+                "actions": []
+            },
+            "expected": {
+                "error": "Product is unknown or ineligible in the sandbox."
+            },
+            "actual": {
+                "error": "Product is unknown or ineligible in the sandbox."
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "PLAN-14",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 2,
+                    "variationId": "SIZE-M"
+                },
+                "events": [
+                    {
+                        "event_id": "PLAN-INITIAL-CANCELLED",
+                        "event_time": "2026-11-17T10:00:00Z",
+                        "customer_id": "C001",
+                        "period_id": "INITIAL-FAKE-INITIAL-001",
+                        "is_first_order": true,
+                        "event_type": "OrderCancelled",
+                        "order_id": "FAKE-INITIAL-001",
+                        "cancelled_at": "2026-11-17",
+                        "plan_id": "PLAN-C001"
+                    },
+                    {
+                        "event_id": "PLAN-INITIAL-COMPLETED",
+                        "event_time": "2026-11-18T10:00:00Z",
+                        "customer_id": "C001",
+                        "period_id": "INITIAL-FAKE-INITIAL-001",
+                        "is_first_order": true,
+                        "event_type": "OrderCompleted",
+                        "order_id": "FAKE-INITIAL-001",
+                        "completed_at": "2026-11-18",
+                        "plan_id": "PLAN-C001"
+                    }
+                ],
+                "actions": []
+            },
+            "expected": {
+                "next_expected_date": null,
+                "reason": "activation_not_allowed",
+                "status": "PendingActivation"
+            },
+            "actual": {
+                "next_expected_date": null,
+                "reason": "activation_not_allowed",
+                "status": "PendingActivation"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "PLAN-15",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 2,
+                    "variationId": "SIZE-M"
+                },
+                "events": [
+                    {
+                        "event_id": "PLAN-INITIAL-COMPLETED",
+                        "event_time": "2026-11-18T10:00:00Z",
+                        "customer_id": "C001",
+                        "period_id": "INITIAL-FAKE-INITIAL-001",
+                        "is_first_order": true,
+                        "event_type": "OrderCompleted",
+                        "order_id": "FAKE-WRONG-ORDER",
+                        "completed_at": "2026-11-18",
+                        "plan_id": "PLAN-C001"
+                    }
+                ],
+                "actions": []
+            },
+            "expected": {
+                "next_expected_date": null,
+                "reason": "not_initial_order",
+                "status": "PendingActivation"
+            },
+            "actual": {
+                "next_expected_date": null,
+                "reason": "not_initial_order",
+                "status": "PendingActivation"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "PLAN-16",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 2,
+                    "variationId": "SIZE-M"
+                },
+                "events": [
+                    {
+                        "event_id": "PLAN-INITIAL-COMPLETED",
+                        "event_time": "2026-11-18T10:00:00Z",
+                        "customer_id": "C001",
+                        "period_id": "INITIAL-FAKE-INITIAL-001",
+                        "is_first_order": true,
+                        "event_type": "OrderCompleted",
+                        "order_id": "FAKE-INITIAL-001",
+                        "completed_at": "2026-11-18",
+                        "plan_id": "PLAN-C001"
+                    },
+                    {
+                        "event_id": "PLAN-INITIAL-COMPLETED-SECOND",
+                        "event_time": "2026-11-18T10:00:00Z",
+                        "customer_id": "C001",
+                        "period_id": "INITIAL-FAKE-INITIAL-001",
+                        "is_first_order": true,
+                        "event_type": "OrderCompleted",
+                        "order_id": "FAKE-INITIAL-001",
+                        "completed_at": "2026-11-19",
+                        "plan_id": "PLAN-C001"
+                    }
+                ],
+                "actions": []
+            },
+            "expected": {
+                "next_expected_date": "2026-12-16",
+                "reason": "activation_not_allowed",
+                "status": "Active"
+            },
+            "actual": {
+                "next_expected_date": "2026-12-16",
+                "reason": "activation_not_allowed",
+                "status": "Active"
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "PLAN-17",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 2,
+                    "variationId": "SIZE-M"
+                },
+                "events": [
+                    {
+                        "event_id": "PLAN-INITIAL-COMPLETED",
+                        "event_time": "2026-11-18T10:00:00Z",
+                        "customer_id": "C001",
+                        "period_id": "INITIAL-FAKE-INITIAL-001",
+                        "is_first_order": true,
+                        "event_type": "OrderCompleted",
+                        "order_id": "FAKE-INITIAL-001",
+                        "completed_at": "2026-11-18",
+                        "plan_id": "PLAN-MISSING"
+                    }
+                ],
+                "actions": []
+            },
+            "expected": {
+                "error": "Plan does not exist."
+            },
+            "actual": {
+                "error": "Plan does not exist."
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "PLAN-18",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 2,
+                    "variationId": "SIZE-M"
+                },
+                "events": [
+                    {
+                        "event_id": "PLAN-INITIAL-COMPLETED",
+                        "event_time": "2026-11-18T10:00:00Z",
+                        "customer_id": "C001",
+                        "period_id": "INITIAL-FAKE-INITIAL-001",
+                        "is_first_order": true,
+                        "event_type": "OrderCompleted",
+                        "order_id": "FAKE-INITIAL-001",
+                        "completed_at": "2026-02-30",
+                        "plan_id": "PLAN-C001"
+                    }
+                ],
+                "actions": []
+            },
+            "expected": {
+                "error": "completed_at must be a valid YYYY-MM-DD date or ISO-8601 timestamp."
+            },
+            "actual": {
+                "error": "completed_at must be a valid YYYY-MM-DD date or ISO-8601 timestamp."
+            },
+            "result": "PASS"
+        },
+        {
+            "test_id": "PLAN-19",
+            "input": {
+                "registration": {
+                    "planId": "PLAN-C001",
+                    "customerId": "C001",
+                    "productId": "P001",
+                    "initialOrderId": "FAKE-INITIAL-001",
+                    "quantity": 2,
+                    "variationId": "SIZE-M"
+                },
+                "events": [
+                    {
+                        "event_id": "PLAN-INITIAL-COMPLETED",
+                        "event_time": "2026-11-18T10:00:00Z",
+                        "customer_id": "C001",
+                        "period_id": "INITIAL-FAKE-INITIAL-001",
+                        "is_first_order": true,
+                        "event_type": "OrderCompleted",
+                        "order_id": "FAKE-INITIAL-001",
+                        "completed_at": "2026-11-18",
+                        "plan_id": null,
+                        "source_ref": "PLAN-C001"
+                    }
+                ],
+                "actions": []
+            },
+            "expected": {
+                "next_expected_date": "2026-12-16",
+                "status": "Active"
+            },
+            "actual": {
+                "next_expected_date": "2026-12-16",
+                "status": "Active"
+            },
+            "result": "PASS"
+        }
+    ]
+}

@@ -1,0 +1,1931 @@
+# Management tests
+
+SIMULATION DATA ONLY
+
+PASS cho OPEN_RULE_GUARD và SANDBOX_ASSUMPTION xác nhận hành vi tạm của sandbox.
+
+## MGMT-01 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-01",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Active",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "quantity",
+                "value": 2,
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-01",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "quantity": 2,
+        "status": "Active"
+    },
+    "actual": {
+        "quantity": 2,
+        "status": "Active"
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-02 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-02",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Active",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "quantity",
+                "value": 0,
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-02",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "error": "Quantity must be positive.",
+        "quantity": 1
+    },
+    "actual": {
+        "error": "Quantity must be positive.",
+        "quantity": 1
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-03 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-03",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Active",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "variation",
+                "value": "L",
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-03",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "variation_id": "L"
+    },
+    "actual": {
+        "variation_id": "L"
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-04 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-04",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Active",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "variation",
+                "value": "UNKNOWN",
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-04",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "error": "INVALID_VARIATION",
+        "variation_id": "M"
+    },
+    "actual": {
+        "error": "INVALID_VARIATION",
+        "variation_id": "M"
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-05 — PASS (SANDBOX_ASSUMPTION)
+
+```json
+{
+    "test_id": "MGMT-05",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Active",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "run",
+                "value": "2026-12-14T08:00:00Z",
+                "now": "2026-12-01T08:00:00+00:00"
+            },
+            {
+                "action": "cycle",
+                "value": 21,
+                "now": "2026-12-14T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-05",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "frequency_days": 21,
+        "last_action": "CYCLE_CHANGED_WITH_CURRENT_SCHEDULE_PRESERVED",
+        "next_expected_date": "2026-12-16"
+    },
+    "actual": {
+        "frequency_days": 21,
+        "last_action": "CYCLE_CHANGED_WITH_CURRENT_SCHEDULE_PRESERVED",
+        "next_expected_date": "2026-12-16"
+    },
+    "result": "PASS",
+    "rule_type": "SANDBOX_ASSUMPTION"
+}
+```
+
+## MGMT-06 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-06",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Active",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "cycle",
+                "value": 30,
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-06",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "error": "Frequency must be 21, 28 or 35 days.",
+        "frequency_days": 28
+    },
+    "actual": {
+        "error": "Frequency must be 21, 28 or 35 days.",
+        "frequency_days": 28
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-07 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-07",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Active",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "pause",
+                "value": null,
+                "now": "2026-12-01T08:00:00+00:00"
+            },
+            {
+                "action": "run",
+                "value": "2026-12-14T08:00:00Z",
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-07",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "reminder_count": 0,
+        "status": "Paused"
+    },
+    "actual": {
+        "reminder_count": 0,
+        "status": "Paused"
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-08 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-08",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Active",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "pause",
+                "value": null,
+                "now": "2026-12-01T08:00:00+00:00"
+            },
+            {
+                "action": "pause",
+                "value": null,
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-08",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "status": "Paused",
+        "transition_count": 1
+    },
+    "actual": {
+        "status": "Paused",
+        "transition_count": 1
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-09 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-09",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Paused",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "resume",
+                "value": null,
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-09",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "status": "Active"
+    },
+    "actual": {
+        "status": "Active"
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-10 — PASS (OPEN_RULE_GUARD)
+
+```json
+{
+    "test_id": "MGMT-10",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Paused",
+        "now": "2026-12-17T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "resume",
+                "value": null,
+                "now": "2026-12-17T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-10",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "error": "NEW_EXPECTED_DATE_REQUIRED",
+        "status": "Paused"
+    },
+    "actual": {
+        "error": "NEW_EXPECTED_DATE_REQUIRED",
+        "status": "Paused"
+    },
+    "result": "PASS",
+    "rule_type": "OPEN_RULE_GUARD"
+}
+```
+
+## MGMT-11 — PASS (OPEN_RULE_GUARD)
+
+```json
+{
+    "test_id": "MGMT-11",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Paused",
+        "now": "2026-12-17T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "postpone",
+                "value": "2026-12-23",
+                "now": "2026-12-17T08:00:00+00:00"
+            },
+            {
+                "action": "resume",
+                "value": null,
+                "now": "2026-12-17T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-11",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "next_expected_date": "2026-12-23",
+        "status": "Active"
+    },
+    "actual": {
+        "next_expected_date": "2026-12-23",
+        "status": "Active"
+    },
+    "result": "PASS",
+    "rule_type": "OPEN_RULE_GUARD"
+}
+```
+
+## MGMT-12 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-12",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Active",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "postpone",
+                "value": "2026-12-23",
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-12",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "next_expected_date": "2026-12-23"
+    },
+    "actual": {
+        "next_expected_date": "2026-12-23"
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-13 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-13",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Active",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "postpone",
+                "value": "2026-11-30",
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-13",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "error": "EXPECTED_DATE_IN_PAST",
+        "next_expected_date": "2026-12-16"
+    },
+    "actual": {
+        "error": "EXPECTED_DATE_IN_PAST",
+        "next_expected_date": "2026-12-16"
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-14 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-14",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Active",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "cancel",
+                "value": null,
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-14",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "status": "Cancelled"
+    },
+    "actual": {
+        "status": "Cancelled"
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-15 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-15",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Paused",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "cancel",
+                "value": null,
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-15",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "status": "Cancelled"
+    },
+    "actual": {
+        "status": "Cancelled"
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-16 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-16",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "PendingActivation",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "cancel",
+                "value": null,
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ]
+    },
+    "expected": {
+        "status": "Cancelled"
+    },
+    "actual": {
+        "status": "Cancelled"
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-17 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-17",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Cancelled",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "resume",
+                "value": null,
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-17",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "error": "PLAN_CANCELLED",
+        "status": "Cancelled"
+    },
+    "actual": {
+        "error": "PLAN_CANCELLED",
+        "status": "Cancelled"
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-18 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-18",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Active",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "cancel",
+                "value": null,
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-18",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "source_order_id": "O-1001",
+        "status": "Cancelled"
+    },
+    "actual": {
+        "source_order_id": "O-1001",
+        "status": "Cancelled"
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-19 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-19",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Cancelled",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "run",
+                "value": "2026-12-14T08:00:00Z",
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-19",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "reminder_count": 0,
+        "status": "Cancelled"
+    },
+    "actual": {
+        "reminder_count": 0,
+        "status": "Cancelled"
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-20 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-20",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Active",
+        "now": "2026-12-14T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "run",
+                "value": "2026-12-14T08:00:00Z",
+                "now": "2026-12-14T08:00:00+00:00"
+            },
+            {
+                "action": "postpone",
+                "value": "2026-12-23",
+                "now": "2026-12-14T08:00:00+00:00"
+            },
+            {
+                "action": "run",
+                "value": "2026-12-21T08:00:00Z",
+                "now": "2026-12-14T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-20",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "reminder_count": 2,
+        "reminder_keys": [
+            "PLAN-MGMT-001@2026-12-16",
+            "PLAN-MGMT-001@2026-12-23"
+        ]
+    },
+    "actual": {
+        "reminder_count": 2,
+        "reminder_keys": [
+            "PLAN-MGMT-001@2026-12-16",
+            "PLAN-MGMT-001@2026-12-23"
+        ]
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-21 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-21",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Active",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "cancel",
+                "value": null,
+                "now": "2026-12-01T08:00:00+00:00"
+            },
+            {
+                "action": "cancel",
+                "value": null,
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-21",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "status": "Cancelled",
+        "transition_count": 1
+    },
+    "actual": {
+        "status": "Cancelled",
+        "transition_count": 1
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-22 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-22",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Active",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "postpone",
+                "value": "2026-02-30",
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-22",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "error": "next_expected_date must be a valid YYYY-MM-DD date or ISO-8601 timestamp.",
+        "next_expected_date": "2026-12-16"
+    },
+    "actual": {
+        "error": "next_expected_date must be a valid YYYY-MM-DD date or ISO-8601 timestamp.",
+        "next_expected_date": "2026-12-16"
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-23 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-23",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "PendingActivation",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "resume",
+                "value": null,
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ]
+    },
+    "expected": {
+        "error": "PLAN_NOT_PAUSED",
+        "status": "PendingActivation"
+    },
+    "actual": {
+        "error": "PLAN_NOT_PAUSED",
+        "status": "PendingActivation"
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-24 — PASS (CHOT)
+
+```json
+{
+    "test_id": "MGMT-24",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Cancelled",
+        "now": "2026-12-01T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "quantity",
+                "value": 2,
+                "now": "2026-12-01T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-24",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "error": "PLAN_CANCELLED",
+        "quantity": 1,
+        "status": "Cancelled"
+    },
+    "actual": {
+        "error": "PLAN_CANCELLED",
+        "quantity": 1,
+        "status": "Cancelled"
+    },
+    "result": "PASS",
+    "rule_type": "CHOT"
+}
+```
+
+## MGMT-25 — PASS (OPEN_RULE_GUARD)
+
+```json
+{
+    "test_id": "MGMT-25",
+    "input": {
+        "registration": {
+            "planId": "PLAN-MGMT-001",
+            "customerId": "C001",
+            "productId": "P001",
+            "initialOrderId": "O-1001",
+            "quantity": 1,
+            "frequencyDays": 28,
+            "variationId": "M"
+        },
+        "initial_status": "Paused",
+        "now": "2026-12-16T08:00:00+00:00",
+        "operations": [
+            {
+                "action": "resume",
+                "value": null,
+                "now": "2026-12-16T08:00:00+00:00"
+            }
+        ],
+        "setup_event": {
+            "event_type": "OrderCompleted",
+            "plan_id": "PLAN-MGMT-001",
+            "event_id": "SETUP-MGMT-25",
+            "event_time": "2026-11-18T10:00:00Z",
+            "order_id": "O-1001",
+            "customer_id": "C001",
+            "period_id": "PERIOD-001",
+            "is_first_order": true,
+            "completed_at": "2026-11-18T10:00:00Z",
+            "contract_mode": "T1_NL",
+            "event": "ORDER_EVENT_ACCEPTED",
+            "reason": "initial_order_completed",
+            "previous": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "PendingActivation",
+                "next_expected_date": null,
+                "source_order_id": "O-1001"
+            },
+            "new": {
+                "plan_id": "PLAN-MGMT-001",
+                "customer_id": "C001",
+                "product_id": "P001",
+                "variation_id": "M",
+                "quantity": 1,
+                "frequency_days": 28,
+                "status": "Active",
+                "next_expected_date": "2026-12-16",
+                "source_order_id": "O-1001"
+            },
+            "from": "PendingActivation",
+            "to": "Active",
+            "next_expected_date": "2026-12-16",
+            "timestamp": "2026-11-18T10:00:00+00:00",
+            "rule_type": "CHOT"
+        }
+    },
+    "expected": {
+        "error": "NEW_EXPECTED_DATE_REQUIRED",
+        "status": "Paused"
+    },
+    "actual": {
+        "error": "NEW_EXPECTED_DATE_REQUIRED",
+        "status": "Paused"
+    },
+    "result": "PASS",
+    "rule_type": "OPEN_RULE_GUARD"
+}
+```
