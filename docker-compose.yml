@@ -1,0 +1,33 @@
+services:
+  mammart_db:
+    image: mysql:5.7
+    container_name: mammart_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: mammart
+      MYSQL_USER: mammart_user
+      MYSQL_PASSWORD: mammart_password
+      MYSQL_ROOT_PASSWORD: root_password
+    ports:
+      - "3308:3306"
+    volumes:
+      - mammart_db_data:/var/lib/mysql
+
+  mammart_app:
+    image: wordpress:latest
+    container_name: mammart_app
+    restart: unless-stopped
+    depends_on:
+      - mammart_db
+    ports:
+      - "8082:80"
+    environment:
+      WORDPRESS_DB_HOST: mammart_db:3306
+      WORDPRESS_DB_USER: mammart_user
+      WORDPRESS_DB_PASSWORD: mammart_password
+      WORDPRESS_DB_NAME: mammart
+    volumes:
+      - ./wp-content:/var/www/html/wp-content
+
+volumes:
+  mammart_db_data:
