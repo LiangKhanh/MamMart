@@ -1,0 +1,19 @@
+﻿sku,source_id,name,age_label_raw,age_min_months,age_max_months_exclusive,source_url,accessed_on,note
+MM-YL-001,67424,Sữa GrowPLUS+ Đỏ 2+ 1.5kg,Từ 2 tuổi,24,,https://concung.com/sua-bot/sua-growplus-do-2-tuoi-1-5kg-67424.html,2026-11-15,
+MM-YL-002,70370,Sữa bột Dielac Grow Plus 2+ 850g,2-10 tuổi,24,120,https://concung.com/sua-bot/sua-bot-dielac-grow-plus-2-2-10-tuoi-850g-70370.html,2026-11-15,"Biên trên theo quy ước nửa khoảng [min,max) của nhóm; nguồn không nêu cách tính biên"
+MM-YL-003,73476,"SPDDCT Friso Pro 3, 800g",trên 2 tuổi,24,,https://concung.com/sua-bot/spddct-friso-pro-3-800g-tren-2-tuoi-73476.html,2026-11-15,"'trên 2 tuổi' quy ước từ 24 tháng, khớp mục Stage 3"
+MM-YL-004,50427,Sữa HiPP Organic Combiotic số 4 800g,từ 3 tuổi,36,,https://concung.com/sua-bot/hipp-4-organic-combiotic-800g-tren-3-tuoi-50427.html,2026-11-15,
+MM-YL-005,51153,Sữa Friso Gold số 4 1400g,2-6 tuổi,24,72,https://concung.com/sua-bot/friso-gold-4-2-6-tuoi-1400gr-51153.html,2026-11-15,Biên trên theo quy ước nửa khoảng
+MM-YL-006,35719,Nutren JUNIOR 800g,1-10 tuổi,12,120,https://concung.com/sua-bot/sua-dac-tri-nestle-nutren-junior-800g-1-10-tuoi-35719.html,2026-11-15,Nhãn trải qua nhiều Stage; chỉ dùng làm ca thử khoảng tuổi
+MM-YL-007,63586,"Sữa tươi DEVONDALE MILK 200ml, lốc 6 hộp",Từ 1 tuổi,12,,https://concung.com/sua-tuoi-cac-loai/sua-tuoi-nguyen-chat-tiet-trung-devondale-milk-devondale-full-cream-milk-200ml-loc-6-hop-63586.html,2026-11-15,"Nhãn tuổi nằm trên thẻ sản phẩm, không nằm trong tên"
+MM-YL-008,71959,Sữa Alphagen Total Care Growing Up Formula 800g,từ 24 tháng trở lên,24,,https://concung.com/sua-bot/sua-alphagen-premium-formulation-total-care-growing-up-formula-800g-tu-24-thang-tro-len-71959.html,2026-11-15,Nhãn dạng tháng
+MM-YL-009,,Bình sữa Bebegrow Green Finger PPSU cổ rộng 160ml,0-3 tháng,0,3,https://concung.com/1519-thuong-hieu-greenfinger.html,2026-11-15,Nguồn là trang thương hiệu; chưa có trang sản phẩm. Sản phẩm không phải sữa
+MM-YL-010,,Sữa Metacare Eco 2+ 850g,2-3 tuổi,24,36,https://concung.com/1458-thuong-hieu-metacare.html,2026-11-15,Nguồn là trang thương hiệu; biên trên theo quy ước nửa khoảng
+MM-YL-011,70917,"Tã dán Takato siêu mềm mại (M, 76 miếng)",,,,https://concung.com/bim-ta-khuyen-mai/ta-dan-takato-sieu-mem-mai-m-76-mieng-70917.html,2026-11-15,Chỉ có 6-11 kg; KHÔNG suy tuổi từ cân nặng; không có nhãn tuổi
+MM-YL-012,47824,Phô mai hữu cơ tách muối Seoul Milk Step 1,,,,https://concung.com/pho-mai-cho-be/pho-mai-huu-co-tach-muoi-seoul-milk-step-1-47824.html,2026-11-15,'Step 1' không phải nhãn tuổi; không có nhãn tuổi
+MM-YL-013,27426,Sữa Meiji Infant Formula 800g,0-12 tháng,0,12,https://concung.com/sua-bot/meiji-infant-formula-800g-0-12-thang-27426.html,2026-11-15,Nằm trong danh mục '0-1 tuổi' (Linh cung cấp)
+MM-YL-014,51992,Sữa HiPP Organic Combiotic số 2 800g,6-12 tháng tuổi,6,12,https://concung.com/sua-bot/hipp-2-organic-combiotic-800g-6-12-thang-51992.html,2026-11-15,Nằm trong danh mục '0-1 tuổi' nhưng nhãn chỉ 6-12 tháng: bé dưới 6 tháng KHÔNG được trả
+MM-YL-015,37821,Sữa Enfamil Nutramigen 400g (giao bao bì ngẫu nhiên),0-12 tháng,0,12,https://concung.com/sua-bot/nutramigen-a-lgg-400g-37821.html,2026-11-15,"Nằm trong danh mục '0-1 tuổi'; chỉ dùng nhãn tuổi, không suy luận công dụng"
+MM-YL-016,27427,Sữa Meiji Growing up Formula 800g,12-36 tháng,12,36,https://concung.com/sua-bot/meiji-growing-up-formula-800g-1-3-tuoi-27427.html,2026-11-15,Nằm trong danh mục '1-2 tuổi' nhưng nhãn 12-36 tháng (URL ghi 1-3 tuổi): nhãn SKU khác nhóm điều hướng
+MM-YL-017,44602,Sữa Vinamilk Yoko Gold 2 850g,1-2 tuổi,12,24,https://concung.com/san-pham-cho-be-duoi-2-tuoi/vinamilk-yoko-gold-2-1-2-tuoi-850g-44602.html,2026-11-15,Nằm trong danh mục '1-2 tuổi'
+MM-YL-018,43263,"Sữa Similac 1+ 800g (bao bì cũ: 850g, giao bao bì ngẫu nhiên)",1-2 tuổi,12,24,https://concung.com/sua-bot/sua-similac-5g-so-3-900g-1-2-tuoi-43263.html,2026-11-15,Nằm trong danh mục '1-2 tuổi'

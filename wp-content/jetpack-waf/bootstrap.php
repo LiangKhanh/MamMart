@@ -4,11 +4,11 @@ if ( defined( 'DISABLE_JETPACK_WAF' ) && DISABLE_JETPACK_WAF ) return;
 define( 'JETPACK_WAF_MODE', 'silent' );
 define( 'JETPACK_WAF_SHARE_DATA', false );
 define( 'JETPACK_WAF_SHARE_DEBUG_DATA', false );
-define( 'JETPACK_WAF_DIR', 'E:\\Download\\laragon\\www\\mammart/wp-content/jetpack-waf' );
-define( 'JETPACK_WAF_WPCONFIG', 'E:\\Download\\laragon\\www\\mammart/wp-content/../wp-config.php' );
+define( 'JETPACK_WAF_DIR', '/var/www/html/wp-content/jetpack-waf' );
+define( 'JETPACK_WAF_WPCONFIG', '/var/www/html/wp-content/../wp-config.php' );
 define( 'JETPACK_WAF_ENTRYPOINT', 'rules/rules.php' );
 ( static function () {
-	$classmap_file = 'E:\\Download\\laragon\\www\\mammart\\wp-content\\plugins\\jetpack/vendor/composer/autoload_classmap.php';
+	$classmap_file = '/var/www/html/wp-content/plugins/jetpack/vendor/composer/autoload_classmap.php';
 	if ( ! is_file( $classmap_file ) ) {
 		return;
 	}
