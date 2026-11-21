@@ -1,0 +1,10 @@
+[2026-11-14 06:57:34] [MÔ PHỎNG] [ORDER_NOT_FOUND] ND: MM63 | Nhận: 50.000 đ / Cần: 0 đ | Ref: FT263180001 | KQ: Không tồn tại đơn hàng #63
+[2026-11-14 06:57:35] [MÔ PHỎNG] [ORDER_NOT_FOUND] ND: MM63 | Nhận: 50.000 đ / Cần: 0 đ | Ref: FT263180001 | KQ: Không tồn tại đơn hàng #63
+[2026-11-14 06:57:54] [MÔ PHỎNG] [ORDER_NOT_FOUND] ND: MM2 | Nhận: 50.000 đ / Cần: 0 đ | Ref: FT263180001 | KQ: Không tồn tại đơn hàng #2
+[2026-11-14 06:57:56] [MÔ PHỎNG] [ORDER_NOT_FOUND] ND: MM2 | Nhận: 50.000 đ / Cần: 0 đ | Ref: FT263180001 | KQ: Không tồn tại đơn hàng #2
+[2026-11-14 07:00:15] [MÔ PHỎNG] [PAID_CONFIRMED] ND: MM67 | Nhận: 30.051 đ / Cần: 30.051 đ | Ref: FT263180001 | KQ: Đơn #67 thanh toán đủ -> Đánh dấu Paid và chuyển trạng thái xử lý.
+[2026-11-14 07:00:39] [MÔ PHỎNG] [IGNORED_DUPLICATE] ND: MM67 | Nhận: 20.051 đ / Cần: 0 đ | Ref: FT263180001 | KQ: Giao dịch trùng mã tham chiếu (FT263180001) -> Bỏ qua, không cộng tiền/đổi trạng thái lần 2.
+[2026-11-14 07:02:15] [MÔ PHỎNG] [ANOMALY_UNDERPAID] ND: MM68 | Nhận: 20.055 đ / Cần: 30.055 đ | Ref: FT263180002 | KQ: Đơn #68 chuyển thiếu 10.000 đ -> Không xác nhận thanh toán.
+[2026-11-14 07:02:27] [MÔ PHỎNG] [LATE_AFTER_CANCEL -> REFUND_PENDING] ND: MM68 | Nhận: 30.055 đ / Cần: 30.055 đ | Ref: FT263180003 | KQ: Đơn #68 đã Cancelled -> Giữ nguyên Cancelled, gắn cờ chờ hoàn tiền thủ công 100%.
+[2026-11-15 13:44:42] [MÔ PHỎNG] [IGNORED_DUPLICATE] ND: MM69 | Nhận: 30.045 đ / Cần: 0 đ | Ref: FT263180003 | KQ: Giao dịch trùng mã tham chiếu (FT263180003) -> Bỏ qua, không cộng tiền/đổi trạng thái lần 2.
+[2026-11-15 13:49:47] [MÔ PHỎNG] [IGNORED_DUPLICATE] ND: MM70 | Nhận: 30.036 đ / Cần: 0 đ | Ref: FT263180001 | KQ: Giao dịch trùng mã tham chiếu (FT263180001) -> Bỏ qua, không cộng tiền/đổi trạng thái lần 2.
