@@ -1,0 +1,37 @@
+<!-- wp:template-part {"slug":"header"} /-->
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"1.5rem"}}}} -->
+<main class="wp-block-group" style="padding-top:1.5rem">
+
+<!-- wp:group {"align":"wide","className":"mm-hero","layout":{"type":"constrained","contentSize":"720px","justifyContent":"left"}} -->
+<div class="wp-block-group alignwide mm-hero">
+<!-- wp:heading {"level":1} --><h1 class="wp-block-heading">Mọi thứ cho bé, chọn nhanh và an tâm</h1><!-- /wp:heading -->
+<!-- wp:paragraph --><p>Tã, khăn ướt, đồ ăn dặm, đồ sơ sinh… xem trước, thêm vào giỏ, đăng nhập khi thanh toán.</p><!-- /wp:paragraph -->
+<!-- wp:buttons --><div class="wp-block-buttons">
+<!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/cua-hang/">Mua sắm ngay</a></div><!-- /wp:button -->
+<!-- wp:button {"className":"is-style-outline"} --><div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="/tai-khoan/">Đăng nhập / Đăng ký</a></div><!-- /wp:button -->
+</div><!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:heading {"level":2,"align":"wide","className":"mm-section-title"} --><h2 class="wp-block-heading alignwide mm-section-title">Mua theo giai đoạn của bé</h2><!-- /wp:heading -->
+<!-- wp:shortcode -->[mammart_stage_entry]<!-- /wp:shortcode -->
+
+<!-- wp:heading {"level":2,"align":"wide","className":"mm-section-title"} --><h2 class="wp-block-heading alignwide mm-section-title">Danh mục nổi bật</h2><!-- /wp:heading -->
+<!-- wp:shortcode -->[mammart_categories]<!-- /wp:shortcode -->
+
+<!-- wp:heading {"level":2,"align":"wide","className":"mm-section-title"} --><h2 class="wp-block-heading alignwide mm-section-title">Sản phẩm bán chạy</h2><!-- /wp:heading -->
+<!-- wp:woocommerce/product-collection {"queryId":1,"query":{"perPage":8,"pages":1,"offset":0,"postType":"product","order":"desc","orderBy":"popularity","search":"","exclude":[],"inherit":false,"taxQuery":{},"isProductCollectionBlock":true,"woocommerceAttributes":[],"woocommerceStockStatus":["instock","outofstock","onbackorder"],"featured":false,"woocommerceOnSale":false,"woocommerceHandPickedProducts":[],"filterable":false,"relatedBy":{"categories":true,"tags":true}},"tagName":"div","displayLayout":{"type":"flex","columns":4,"shrinkColumns":true},"dimensions":{"widthType":"fill"},"align":"wide"} -->
+<div class="wp-block-woocommerce-product-collection alignwide">
+<!-- wp:woocommerce/product-template -->
+<!-- wp:woocommerce/product-image {"showSaleBadge":true,"imageSizing":"thumbnail","isDescendentOfQueryLoop":true} /-->
+<!-- wp:post-title {"textAlign":"center","level":3,"isLink":true,"fontSize":"medium","__woocommerceNamespace":"woocommerce/product-collection/product-title"} /-->
+<!-- wp:woocommerce/product-price {"textAlign":"center","isDescendentOfQueryLoop":true,"fontSize":"small"} /-->
+<!-- wp:woocommerce/product-button {"textAlign":"center","isDescendentOfQueryLoop":true,"fontSize":"small"} /-->
+<!-- /wp:woocommerce/product-template -->
+</div>
+<!-- /wp:woocommerce/product-collection -->
+
+<!-- wp:shortcode -->[mammart_policy]<!-- /wp:shortcode -->
+</main>
+<!-- /wp:group -->
+<!-- wp:template-part {"slug":"footer"} /-->
