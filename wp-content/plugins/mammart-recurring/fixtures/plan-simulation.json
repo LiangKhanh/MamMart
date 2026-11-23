@@ -1,0 +1,62 @@
+{
+  "label": "SIMULATION DATA ONLY",
+  "customer_id": "C001",
+  "products": {
+    "P001": {"name": "Tã dán size M", "_is_recurring_eligible": 1, "variations": ["SIZE-M", "SIZE-L", "SIZE-XL"]},
+    "P002": {"name": "Khăn ướt 100 tờ", "_is_recurring_eligible": 1},
+    "P003": {"name": "Sản phẩm không hỗ trợ recurring", "_is_recurring_eligible": 0}
+  },
+  "registration": {
+    "planId": "PLAN-C001",
+    "customerId": "C001",
+    "productId": "P001",
+    "initialOrderId": "FAKE-INITIAL-001",
+    "quantity": 2,
+    "variationId": "SIZE-M"
+  },
+  "events": {
+    "completed": {
+      "event_id": "PLAN-INITIAL-COMPLETED",
+      "event_time": "2026-11-18T10:00:00Z",
+      "customer_id": "C001",
+      "period_id": "INITIAL-FAKE-INITIAL-001",
+      "is_first_order": true,
+      "event_type": "OrderCompleted",
+      "order_id": "FAKE-INITIAL-001",
+      "completed_at": "2026-11-18",
+      "plan_id": "PLAN-C001"
+    },
+    "initial_cancelled": {
+      "event_id": "PLAN-INITIAL-CANCELLED",
+      "event_time": "2026-11-17T10:00:00Z",
+      "customer_id": "C001",
+      "period_id": "INITIAL-FAKE-INITIAL-001",
+      "is_first_order": true,
+      "event_type": "OrderCancelled",
+      "order_id": "FAKE-INITIAL-001",
+      "cancelled_at": "2026-11-17",
+      "plan_id": "PLAN-C001"
+    },
+    "reorder_cancelled": {
+      "event_id": "PLAN-REORDER-CANCELLED",
+      "event_time": "2026-12-15T10:00:00Z",
+      "customer_id": "C001",
+      "period_id": "PLAN-C001@2026-12-16",
+      "is_first_order": false,
+      "event_type": "OrderCancelled",
+      "order_id": "FAKE-REORDER-002",
+      "cancelled_at": "2026-12-15",
+      "plan_id": "PLAN-C001"
+    },
+    "payment_confirmed": {
+      "event_id": "PLAN-PAYMENT-TRACE",
+      "event_time": "2026-11-18T10:00:00Z",
+      "customer_id": "C001",
+      "period_id": "INITIAL-FAKE-INITIAL-001",
+      "is_first_order": true,
+      "event_type": "PaymentConfirmed",
+      "order_id": "FAKE-INITIAL-001",
+      "plan_id": "PLAN-C001"
+    }
+  }
+}

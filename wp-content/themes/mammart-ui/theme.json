@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "layout": { "contentSize": "1180px", "wideSize": "1280px" },
+    "color": {
+      "palette": [
+        { "slug": "mm-mint", "name": "Mint", "color": "#2f9e8a" },
+        { "slug": "mm-mint-dark", "name": "Mint đậm", "color": "#217a69" },
+        { "slug": "mm-mint-soft", "name": "Mint nhạt", "color": "#e6f5f1" },
+        { "slug": "mm-peach", "name": "Peach", "color": "#ffe9df" },
+        { "slug": "mm-ink", "name": "Mực", "color": "#27343b" }
+      ]
+    }
+  },
+  "styles": {
+    "elements": { "link": { "color": { "text": "#217a69" } } }
+  }
+}
