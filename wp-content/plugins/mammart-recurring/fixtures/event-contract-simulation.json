@@ -1,0 +1,78 @@
+{
+  "label": "SIMULATION DATA ONLY",
+  "registration": {
+    "planId": "PLAN-001",
+    "customerId": "C001",
+    "productId": "P001",
+    "initialOrderId": "O-1001",
+    "quantity": 1,
+    "frequencyDays": 28,
+    "variationId": "M"
+  },
+  "products": {
+    "P001": {
+      "name": "Tã dán sandbox",
+      "_is_recurring_eligible": 1,
+      "variations": [
+        "M",
+        "L",
+        "XL"
+      ]
+    }
+  },
+  "events": {
+    "initial": {
+      "event_id": "EV-LO-001",
+      "event_type": "OrderCompleted",
+      "event_time": "2026-11-18T10:00:00Z",
+      "order_id": "O-1001",
+      "customer_id": "C001",
+      "plan_id": "PLAN-001",
+      "period_id": "PERIOD-001",
+      "is_first_order": true,
+      "completed_at": "2026-11-18T10:00:00Z"
+    },
+    "placed": {
+      "event_id": "EV-LO-PLACED",
+      "event_type": "OrderPlaced",
+      "event_time": "2026-12-15T10:00:00Z",
+      "order_id": "O-1002",
+      "customer_id": "C001",
+      "plan_id": "PLAN-001",
+      "period_id": "PERIOD-002",
+      "is_first_order": false
+    },
+    "recurring": {
+      "event_id": "EV-LO-002",
+      "event_type": "OrderCompleted",
+      "event_time": "2026-12-17T10:00:00Z",
+      "order_id": "O-1002",
+      "customer_id": "C001",
+      "plan_id": "PLAN-001",
+      "period_id": "PERIOD-002",
+      "is_first_order": false,
+      "completed_at": "2026-12-17T10:00:00Z"
+    },
+    "cancelled": {
+      "event_id": "EV-LO-003",
+      "event_type": "OrderCancelled",
+      "event_time": "2026-12-16T10:00:00Z",
+      "order_id": "O-1002",
+      "customer_id": "C001",
+      "plan_id": "PLAN-001",
+      "period_id": "PERIOD-002",
+      "is_first_order": false,
+      "cancelled_at": "2026-12-16T10:00:00Z"
+    },
+    "payment": {
+      "event_id": "EV-LO-PAYMENT",
+      "event_type": "PaymentConfirmed",
+      "event_time": "2026-12-15T10:00:00Z",
+      "order_id": "O-1002",
+      "customer_id": "C001",
+      "plan_id": "PLAN-001",
+      "period_id": "PERIOD-002",
+      "is_first_order": false
+    }
+  }
+}

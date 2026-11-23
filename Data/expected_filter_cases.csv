@@ -1,0 +1,15 @@
+﻿child_age_months,expected_labeled_skus,unlabeled_skus_policy,note
+0,MM-YL-009 MM-YL-013 MM-YL-015,"MM-YL-011, MM-YL-012: theo cấu hình (chưa chốt)",
+2,MM-YL-009 MM-YL-013 MM-YL-015,"MM-YL-011, MM-YL-012: theo cấu hình (chưa chốt)",
+3,MM-YL-013 MM-YL-015,"MM-YL-011, MM-YL-012: theo cấu hình (chưa chốt)",Biên: SKU 0-3 tháng không còn (max không tính)
+5,MM-YL-013 MM-YL-015,"MM-YL-011, MM-YL-012: theo cấu hình (chưa chốt)",HiPP số 2 (6-12 tháng) chưa được trả dù nằm trong danh mục 0-1 tuổi
+6,MM-YL-013 MM-YL-014 MM-YL-015,"MM-YL-011, MM-YL-012: theo cấu hình (chưa chốt)",Biên: HiPP số 2 bắt đầu từ 6 tháng
+10,MM-YL-013 MM-YL-014 MM-YL-015,"MM-YL-011, MM-YL-012: theo cấu hình (chưa chốt)",Không trả hàng 0-3 tháng cho bé 10 tháng chỉ vì cùng nhóm 0-12
+12,MM-YL-006 MM-YL-007 MM-YL-016 MM-YL-017 MM-YL-018,"MM-YL-011, MM-YL-012: theo cấu hình (chưa chốt)",Biên: SKU 0-12 tháng không còn; nhóm từ 12 tháng bắt đầu
+23,MM-YL-006 MM-YL-007 MM-YL-016 MM-YL-017 MM-YL-018,"MM-YL-011, MM-YL-012: theo cấu hình (chưa chốt)",
+24,MM-YL-001 MM-YL-002 MM-YL-003 MM-YL-005 MM-YL-006 MM-YL-007 MM-YL-008 MM-YL-010 MM-YL-016,"MM-YL-011, MM-YL-012: theo cấu hình (chưa chốt)",Biên Stage 2/3; SKU 1-2 tuổi không còn
+30,MM-YL-001 MM-YL-002 MM-YL-003 MM-YL-005 MM-YL-006 MM-YL-007 MM-YL-008 MM-YL-010 MM-YL-016,"MM-YL-011, MM-YL-012: theo cấu hình (chưa chốt)",
+35,MM-YL-001 MM-YL-002 MM-YL-003 MM-YL-005 MM-YL-006 MM-YL-007 MM-YL-008 MM-YL-010 MM-YL-016,"MM-YL-011, MM-YL-012: theo cấu hình (chưa chốt)",
+36,MM-YL-001 MM-YL-002 MM-YL-003 MM-YL-004 MM-YL-005 MM-YL-006 MM-YL-007 MM-YL-008,"MM-YL-011, MM-YL-012: theo cấu hình (chưa chốt)",
+60,MM-YL-001 MM-YL-002 MM-YL-003 MM-YL-004 MM-YL-005 MM-YL-006 MM-YL-007 MM-YL-008,"MM-YL-011, MM-YL-012: theo cấu hình (chưa chốt)",
+120,MM-YL-001 MM-YL-003 MM-YL-004 MM-YL-007 MM-YL-008,"MM-YL-011, MM-YL-012: theo cấu hình (chưa chốt)",

@@ -1,0 +1,24 @@
+{
+  "label": "SIMULATION DATA ONLY",
+  "plan_id": "PLAN-REM-001",
+  "customer_id": "C001",
+  "product_id": "P001",
+  "frequency_days": 28,
+  "completed_at": "2026-11-18",
+  "expected_date": "2026-12-16",
+  "reminder_date": "2026-12-14",
+  "runs": {
+    "early": "2026-12-13T08:00:00+00:00",
+    "t_minus_2": "2026-12-14T08:00:00+00:00",
+    "t_minus_2_repeat": "2026-12-14T08:05:00+00:00",
+    "t_minus_2_noon": "2026-12-14T12:00:00+00:00",
+    "t_minus_1": "2026-12-15T08:00:00+00:00",
+    "expected": "2026-12-16T23:59:59+00:00",
+    "expired": "2026-12-17T00:00:00+00:00",
+    "expired_repeat": "2026-12-18T08:00:00+00:00",
+    "cycle_2_t_minus_2": "2027-01-11T08:00:00+00:00"
+  },
+  "cycle_2_completed_at": "2026-12-16",
+  "cycle_2_expected_date": "2027-01-13",
+  "failure_reason": "SIMULATED_MAIL_FAILURE"
+}

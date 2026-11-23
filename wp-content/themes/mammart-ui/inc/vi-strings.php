@@ -1,0 +1,61 @@
+<?php
+defined( 'ABSPATH' ) || exit;
+/** Bản dịch tiếng Việt tối thiểu cho các chuỗi WooCommerce hiện trên giao diện khách (khoá = chuỗi gốc, hoặc "ngữ cảnh\x04chuỗi"). */
+function mammart_vi_strings() {
+	return [
+		'Cart' => 'Giỏ hàng', 'Product' => 'Sản phẩm', 'Total' => 'Thành tiền', 'Price' => 'Đơn giá', 'Quantity' => 'Số lượng',
+		'Details' => 'Chi tiết', 'Subtotal' => 'Tạm tính', 'Estimated total' => 'Tạm tính', 'Cart totals' => 'Tóm tắt đơn',
+		'Proceed to Checkout' => 'Tiến hành thanh toán', 'Proceed to checkout' => 'Tiến hành thanh toán',
+		'Your cart is currently empty!' => 'Giỏ hàng của bạn đang trống', 'Start shopping' => 'Tiếp tục mua sắm',
+		'Return to shop' => 'Tiếp tục mua sắm', 'Your cart is currently empty.' => 'Giỏ hàng của bạn đang trống.',
+		'New in store' => 'Sản phẩm mới', 'Remove item' => 'Xóa', 'Remove' => 'Xóa', 'Add to cart' => 'Thêm vào giỏ',
+		'Add to Cart' => 'Thêm vào giỏ', 'Select options' => 'Chọn mua', 'Read more' => 'Xem thêm', 'Sale!' => 'Giảm giá', 'Sale' => 'Giảm giá',
+		'Out of stock' => 'Hết hàng', 'In stock' => 'Còn hàng', 'Choose an option' => 'Chọn phân loại', 'Clear' => 'Xóa lựa chọn',
+		'Description' => 'Mô tả', 'Additional information' => 'Thông tin thêm', 'Reviews' => 'Đánh giá', 'SKU:' => 'Mã SKU:', 'SKU' => 'Mã SKU',
+		'Category:' => 'Danh mục:', 'Categories:' => 'Danh mục:', 'Related products' => 'Sản phẩm liên quan', 'Home' => 'Trang chủ',
+		'Shop' => 'Cửa hàng', 'Search' => 'Tìm', 'Sort by' => 'Sắp xếp', 'Default sorting' => 'Mặc định', 'Sort by popularity' => 'Bán chạy',
+		'Sort by latest' => 'Mới nhất', 'Sort by price: low to high' => 'Giá tăng dần', 'Sort by price: high to low' => 'Giá giảm dần',
+		'Sort by average rating' => 'Đánh giá cao', 'Showing the single result' => 'Hiển thị 1 kết quả', 'No products were found matching your selection.' => 'Không tìm thấy sản phẩm phù hợp.',
+		'Login' => 'Đăng nhập', 'Log in' => 'Đăng nhập', 'Register' => 'Đăng ký', 'Username or email address' => 'Tên đăng nhập hoặc email',
+		'Email address' => 'Địa chỉ email', 'Password' => 'Mật khẩu', 'Remember me' => 'Ghi nhớ đăng nhập', 'Lost your password?' => 'Quên mật khẩu?',
+		'Log out' => 'Đăng xuất', 'My account' => 'Tài khoản', 'Dashboard' => 'Tổng quan', 'Orders' => 'Đơn hàng', 'Addresses' => 'Địa chỉ',
+		'Account details' => 'Thông tin tài khoản', 'Hello %1$s (not %1$s? %2$s)' => 'Xin chào %1$s (không phải %1$s? %2$s)',
+		'Customer account' => 'Tài khoản', 'My Account' => 'Tài khoản', 'Account' => 'Tài khoản', 'Mini-Cart' => 'Giỏ hàng', 'Mini Cart' => 'Giỏ hàng',
+		'View my cart' => 'Xem giỏ hàng', 'Go to checkout' => 'Thanh toán', 'Start shopping' => 'Tiếp tục mua sắm',
+		'Your cart is empty' => 'Giỏ hàng trống', 'Filter by price' => 'Khoảng giá', 'Filter by stock status' => 'Tình trạng', 'Apply' => 'Áp dụng', 'Reset' => 'Đặt lại',
+		'View cart' => 'Xem giỏ hàng', 'has been added to your cart.' => 'đã được thêm vào giỏ.', 'Browse products' => 'Xem sản phẩm',
+		'Decrease quantity of %s' => 'Giảm số lượng %s', 'Increase quantity of %s' => 'Tăng số lượng %s', 'Quantity of %s in your cart.' => 'Số lượng %s trong giỏ.',
+		'Remove %s from cart' => 'Xóa %s khỏi giỏ', 'Save %s' => 'Tiết kiệm %s', 'Previous' => 'Trước', 'Next' => 'Sau',
+		'Add a coupon' => 'Thêm mã giảm giá', 'Add coupons' => 'Thêm mã giảm giá', 'Order summary' => 'Tóm tắt đơn',
+		'Shipping' => 'Phí giao', 'Calculated at checkout' => 'Tính ở bước thanh toán', 'Taxes' => 'Thuế', 'Discount' => 'Giảm giá',
+		'Only %d left in stock' => 'Chỉ còn %d sản phẩm', 'Low stock' => 'Sắp hết hàng',
+		'Your cart has been updated.' => 'Giỏ hàng đã được cập nhật.', 'Update cart' => 'Cập nhật giỏ hàng',
+		'Please choose product options&hellip;' => 'Vui lòng chọn phân loại…', 'Please select some product options before adding this product to your cart.' => 'Vui lòng chọn kích cỡ / màu trước khi thêm vào giỏ.',
+		'Sorry, this product is unavailable. Please choose a different combination.' => 'Phân loại này hiện không có. Vui lòng chọn phân loại khác.',
+		'Showing all %d results' => 'Hiển thị tất cả %d kết quả', 'Product categories' => 'Danh mục sản phẩm', 'No orders have been made yet.' => 'Bạn chưa có đơn hàng nào.',
+		'Browse products' => 'Mua sắm ngay', 'Go shop' => 'Mua sắm ngay',
+		'Orders' => 'Đơn hàng của tôi', 'Hello' => 'Xin chào', 'From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.' => 'Từ trang tổng quan bạn có thể xem đơn hàng gần đây, quản lý địa chỉ và chỉnh thông tin tài khoản.',
+		"breadcrumb\x04Home" => 'Trang chủ', 'Reviews (%d)' => 'Đánh giá (%d)', 'Reviews' => 'Đánh giá', 'Browse store' => 'Mua sắm ngay',
+		'Your shopping cart is empty' => 'Giỏ hàng trống', 'Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our %s.' => 'Thông tin cá nhân của bạn chỉ dùng để hỗ trợ trải nghiệm, quản lý tài khoản và các mục đích nêu trong %s.',
+		'privacy policy' => 'chính sách bảo mật', 'Showing all %d results' => 'Hiển thị tất cả %d kết quả', 'Current price is' => 'Giá hiện tại', 'Original price was' => 'Giá gốc',
+		'Price range' => 'Khoảng giá', 'Filter by price' => 'Khoảng giá', 'Skip to content' => 'Chuyển đến nội dung', 'Page not found' => 'Không tìm thấy trang',
+		'Create an account?' => 'Tạo tài khoản?', 'Username' => 'Tên đăng nhập', 'Email' => 'Email', 'Billing details' => 'Thông tin thanh toán',
+		'Save changes' => 'Lưu thay đổi', 'First name' => 'Tên', 'Last name' => 'Họ', 'Display name' => 'Tên hiển thị',
+		'Edit' => 'Sửa', 'Add' => 'Thêm', 'Item' => 'Sản phẩm', 'Order' => 'Đơn hàng', 'Date' => 'Ngày', 'Status' => 'Trạng thái',
+		'Browse products' => 'Mua sắm ngay', 'No order has been made yet.' => 'Bạn chưa có đơn hàng nào.',
+		'Select options' => 'Chọn mua', 'Read more' => 'Xem sản phẩm',
+		'Sorry, this product is unavailable.' => 'Sản phẩm này hiện không có.',
+		'You cannot add that amount to the cart &mdash; we have %1$s in stock and you already have %2$s in your cart.' => 'Chỉ còn %1$s sản phẩm trong kho và bạn đã có %2$s trong giỏ — không thể thêm số lượng này.',
+		'You cannot add that amount of &quot;%1$s&quot; to the cart because there is not enough stock (%2$s remaining).' => 'Không thể thêm &quot;%1$s&quot;: chỉ còn %2$s sản phẩm trong kho.',
+		'&ldquo;%s&rdquo; has been added to your cart.' => '“%s” đã được thêm vào giỏ.',
+		'%s has been added to your cart.' => '%s đã được thêm vào giỏ.',
+		'View cart' => 'Xem giỏ hàng', 'Continue shopping' => 'Tiếp tục mua sắm',
+		'%s has been removed from your cart because it can no longer be purchased. Please contact us if you need assistance.' => '%s đã được gỡ khỏi giỏ vì sản phẩm không còn bán. Vui lòng liên hệ cửa hàng nếu cần hỗ trợ.',
+		'An item which is no longer available was removed from your cart.' => 'Một sản phẩm không còn bán đã được gỡ khỏi giỏ.',
+	];
+}
+function mammart_vi_plurals() {
+	return [
+		'%s has been added to your cart.' => '%s đã được thêm vào giỏ.', '%d item' => '%d sản phẩm', '%d item in cart' => '%d sản phẩm', 'Showing %d result' => 'Hiển thị %d kết quả',
+	];
+}
