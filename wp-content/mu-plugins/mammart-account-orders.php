@@ -33,7 +33,7 @@ function mammart_account_order_fulfillment_status( WC_Order $order ): string {
 		$method = $order->get_payment_method();
 		if ( 'cod' === $method ) {
 			$status = 'cod-awaiting';
-		} elseif ( 'mammart_sepay' === $method ) {
+		} elseif ( in_array( $method, array( 'sepay', 'mammart_sepay' ), true ) ) {
 			return __( 'Chờ thanh toán', 'mammart-account-orders' );
 		}
 	}
@@ -58,10 +58,6 @@ add_filter( 'woocommerce_account_menu_items', static function ( $items ) {
 	return $items;
 } );
 
-add_action( 'woocommerce_before_account_orders', static function () {
-	echo '<h2>' . esc_html__( 'Đơn hàng của tôi', 'mammart-account-orders' ) . '</h2>';
-} );
-
 add_filter( 'woocommerce_account_orders_columns', static function ( $columns ) {
 	unset( $columns['order-status'] );
 	return array(
@@ -73,6 +69,30 @@ add_filter( 'woocommerce_account_orders_columns', static function ( $columns ) {
 		'order-actions'              => __( 'Thao tác', 'mammart-account-orders' ),
 	) + $columns;
 } );
+
+add_action( 'wp_enqueue_scripts', static function () {
+	if ( ! function_exists( 'is_account_page' ) || ! is_account_page() || ! is_wc_endpoint_url( 'orders' ) ) {
+		return;
+	}
+
+	$breakpoint = apply_filters( 'woocommerce_style_smallscreen_breakpoint', '768px' );
+	wp_add_inline_style(
+		'woocommerce-smallscreen',
+		sprintf(
+			'@media only screen and (max-width: %s) {
+				.woocommerce table.woocommerce-orders-table tbody th.woocommerce-orders-table__cell-order-number {
+					display: flex;
+					justify-content: space-between;
+					gap: 0.5em;
+				}
+				.woocommerce table.woocommerce-orders-table tbody th.woocommerce-orders-table__cell-order-number::before {
+					content: attr(data-title) ":";
+				}
+			}',
+			$breakpoint
+		)
+	);
+}, 20 );
 
 add_action( 'woocommerce_my_account_my_orders_column_order-total', static function ( $order ) {
 	echo wp_kses_post( $order->get_formatted_order_total() );
@@ -97,6 +117,18 @@ add_filter( 'woocommerce_my_account_my_orders_actions', static function ( $actio
 	}
 	return $actions;
 }, 10, 2 );
+
+add_filter( 'woocommerce_endpoint_view-order_title', static function ( $title ) {
+	global $wp;
+
+	$order_id = absint( $wp->query_vars['view-order'] ?? 0 );
+	// WooCommerce uses this title for both the page heading and the document title.
+	if ( '' === $title || ! $order_id || ! is_user_logged_in() || ! current_user_can( 'view_order', $order_id ) ) {
+		return __( 'Chi tiết đơn hàng', 'mammart-account-orders' );
+	}
+
+	return $title;
+} );
 
 add_action( 'woocommerce_before_template_part', static function ( $template_name ) {
 	// WooCommerce loads this template after its own View Order capability check.
